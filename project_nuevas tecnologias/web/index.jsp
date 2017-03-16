@@ -15,17 +15,17 @@
    <link rel="stylesheet" href="css/index.css">
     <body>
         <div class="slide" >
-            <img class="mySlides" src="images/slider/mujer.jpg" >
-            <img class="mySlides" src="images/slider/hombre.jpg" >
-            <img class="mySlides" src="images/slider/new.jpg" >
-            <img class='mySlides' src="images/slider/kids.jpg" >
+            <a href="proof.jsp"><img class="mySlides" src="images/slider/taller.jpg" ></a>
+            <img class="mySlides" src="images/slider/cliche.jpg" >
+            <img class="mySlides" src="images/slider/cine.jpg" >
+            <img class='mySlides' src="images/slider/mujer_cine.jpg" >
         </div>
         
         
-    <%@include file="footer.jsp"%>
-    </body>
    
     
+    </body>
+    <%@include file="footer.jsp"%>     
     <script>
         var myIndex = 0;
         carousel();
@@ -35,13 +35,12 @@
             var i;
             var x = document.getElementsByClassName("mySlides");
             for (i = 0; i < x.length; i++) 
-                {
                x[i].style.display = "none";  
-                }
             myIndex++;
-            if (myIndex > x.length) {myIndex = 1}    
+            if (myIndex > x.length) 
+                myIndex = 1;    
             x[myIndex-1].style.display = "block";  
-            setTimeout(carousel, 8000); // Change image every 2 seconds
+            setTimeout(carousel, 8000); // Change image every 8 seconds
             }
     </script>
 </html>

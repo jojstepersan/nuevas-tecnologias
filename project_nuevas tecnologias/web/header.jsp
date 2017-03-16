@@ -5,37 +5,38 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>header</title>
-        <link rel="stylesheet" href="css/header.css">
-    </head>
-    <body>
+    <link rel="stylesheet" href="css/header.css">
+    
+    <header>
         <div class="header">
+            <div class="header">
             <div class="logo">  
                 <img src="images/logo.png">
             </div>
-            <div class="search">
-                <div class="div1">
-                    <input type="search" value="search" class="inputSearch">
-                  </div>
-                <div>
-                    <button class="buttonSearch" type="submit" value="search"  ><img src="images/search.png" ></button>
-                </div>
-            </div>
-                
-        </div>
-        <div class="menu">
-            <nav>
-                <ul>
-                    <li><a  href="">Women</a></li>
-                    <li><a href="">Men</a></li>
-                    <li><a href="">Kids</a></li>
-                    <li><a href="">New Collection</a></li>
-                </ul>
+            <div>
+            <nav class="menu">
+                <span>
+                    <ul>
+                        <li><a href="index.jsp">Inicio</a></li>
+                        <li><a href="">Eventos</a></li>
+                        <li><a href="">Expositores</a></li>
+                        <li><a href="">conferencias</a></li>
+                        <li><a href="login.jsp">Log in</a></li>
+                        <li><a href="">Registrate</a></li>
+                    </ul>
+                </span>    
             </nav>
-        </div>    
-    </body>
-</html>
+            </div>
+            </div>
+        </div>
+        </header>
+    <script>
+    var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+    </script>

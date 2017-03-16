@@ -4,28 +4,15 @@
     Author     : Stiven
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-        <link rel="stylesheet" href="css/footer.css">
-    </head>
-    <body>
-        <footer>
-            <div class="footer">
-
-            </div>
-        </footer>
-        
-<div class="footer"> 
-    <strong>
-        Jojhan Stiven Perdomo SÃ¡nchez<br>
-        Nuevas Tecnologias<br>
-        3203721126<br>
-        jojhans.perdomos@konradlorenz.edu.co
-    </strong>
-</div>
-    </body>
-</html>
+<link rel="stylesheet" href="css/footer.css">
+<footer>        
+    <div class="footer"> 
+        <strong>
+            <span>Jojhan Stiven Perdomo Sánchez</span><br>
+            <span>Nuevas Tecnologias</span><br>
+            <span>3203721126</span><br>
+            <span>jojhans.perdomos@konradlorenz.edu.co</span>
+        </strong>
+    </div>    
+</footer>
+    
