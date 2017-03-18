@@ -82,6 +82,7 @@ and open the template in the editor.
     float: right;
     font-size: 1em;  
     margin-top:10px; 
+    font-family:sans-serif;
 }
 
 .menu ul
@@ -118,6 +119,3 @@ overflow: hidden;
     background-color:white;
     color:black;
 }
-
-/*css login*/
-

@@ -11,7 +11,7 @@
         <div class="header">
             <div class="header">
             <div class="logo">  
-                <img src="images/logo.png">
+                <a href="index.jsp"><img src="images/logo.png"></a>
             </div>
             <div>
             <nav class="menu">
