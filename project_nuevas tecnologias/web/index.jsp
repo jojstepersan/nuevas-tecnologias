@@ -10,26 +10,22 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Index</title>
+        <%@include file="header.jsp"%>
     </head>
-    <%@include file="header.jsp"%>
    <link rel="stylesheet" href="css/index.css">
     <body>
         <div class="slide" >
-            <a href="proof.jsp"><img class="mySlides" src="images/slider/taller.jpg" ></a>
+            <a href="Evento.jsp"><img class="mySlides" src="images/slider/taller.jpg" ></a>
             <img class="mySlides" src="images/slider/cliche.jpg" >
             <img class="mySlides" src="images/slider/cine.jpg" >
             <img class='mySlides' src="images/slider/mujer_cine.jpg" >
         </div>
         
-        
-   
-    
     </body>
     <%@include file="footer.jsp"%>     
     <script>
         var myIndex = 0;
         carousel();
-
         function carousel() 
             {
             var i;

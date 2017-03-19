@@ -6,7 +6,6 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
     <link rel="stylesheet" href="css/header.css">
-    
     <header>
         <div class="header">
             <div class="header">
@@ -30,13 +29,3 @@
             </div>
         </div>
         </header>
-    <script>
-    var modal = document.getElementById('id01');
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-    </script>
