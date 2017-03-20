@@ -28,14 +28,15 @@
                 <nav class="nav-bar">
                 <span>
                     <ul>
-                        <li><a href="" class="asistir">Asistir</a></li>
-                        <li><a>N° de cupos</a></li>
-                        <li>Cupos disponibles</li>
-                        <li></li>
+                        <li><a href="" class="asistir"><strong>Asistir</a></li>
+                        <li class="info"><a>N° de cupos:</a></li>
+                        <li class="data">50</li>
+                        <li class="info"><strong>Cupos disponibles:</li>
+                        <li class="data">30</li></strong>
                     </ul>
                 </span>    
             </nav>
-                    
+           
             </div>
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.

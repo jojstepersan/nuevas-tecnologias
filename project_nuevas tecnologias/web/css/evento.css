@@ -51,54 +51,81 @@ p
 .info-evento
 {
     width:80%;
-    height: 60px;
+    height: 56px;
     margin-left: 10%;
     margin-right: 10%;
-    border:1px solid black;
 }
 
 .nav-bar
 {
     position: relative;
     width: 80%;
-    height: 40px;
+    height: 100%;;
     font-size: 1rem;
     margin-left: 10%;
     margin-right: 10%;
 }
-.nav-bar span ul
+.nav-bar  ul
 {
     list-style: none;
     padding: 0;
-    width: 100;
-    height: 100%;
+    width: 100%;
+    height: 50%;
     overflow: hidden;
+    list-style: none;    
+    display: inline;
+    margin-top:2px; 
 }
 .nav-bar span ul li
 {
-    width: 20%;
-    margin-bottom: 5px;
+    padding: 1px;
+    width: 16%;
     color: black;
-}
+    height:50%;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    font-family: Roboto;
+    padding: 14px 16px;
+    float: left;
 
+}
+.info{
+    background: blueviolet;
+    
+}
+.data{
+    background: purple
+}
+.info:hover{
+    background: black;
+    color:white;
+    font-size: 1em;
+}
+.data:hover
+{
+   background: black;
+   color:white;
+   font-size: 1.5em; 
+}
 .asistir
 {
-  color: #fff;
-  background-color: #12AFAF;
-  border-color: transparent;
-  -webkit-transition: all .5s ease;
-          transition: all .5s ease;
-           text-decoration: none;
+    color: #fff;
+    background-color: #12AFAF;
+    border-color: transparent;
     display: block;
     color: white;
     text-align: center;
     font-family: Roboto;
-    padding: 14px 16px;
     font-size: 1.2em;
+    text-decoration: none;
+    height: 100%;
+    width:100%;
 }
 .asistir:hover,
 .asistir:focus,
 .asistir:active:hover {
   background-color: black;
   color:white;
-  border-color: transparent; }
+  border-color: transparent; 
+ font-size: 1.3em;}

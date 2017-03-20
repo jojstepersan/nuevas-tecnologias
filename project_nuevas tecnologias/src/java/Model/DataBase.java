@@ -8,5 +8,5 @@ package Model;
 import java.util.ArrayList;
 
 public class DataBase {
-    public static ArrayList<User> ad = new ArrayList();
+    public static ArrayList<User> usuarios = new ArrayList();
 }

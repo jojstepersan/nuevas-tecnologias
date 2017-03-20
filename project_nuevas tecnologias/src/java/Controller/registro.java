@@ -19,8 +19,8 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class registro extends HttpServlet {
     public static DataBase ag= new DataBase();
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+    
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
                 String nom = request.getParameter("name");
@@ -29,7 +29,7 @@ public class registro extends HttpServlet {
                 String amil = request.getParameter("email");
                 String date = request.getParameter("date");
                 User nuevo= new User(nom,us,pass,amil,date);
-                ag.ad.add(nuevo);
+                ag.usuarios.add(nuevo);
                 response.sendRedirect("index.jsp");
         }
     }

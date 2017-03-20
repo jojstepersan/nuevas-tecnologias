@@ -32,17 +32,18 @@ public class Login extends HttpServlet {
             String user = request.getParameter("uname");
             String pass = request.getParameter("psw");
             int j=0;
-            for(int i=0;i<ag.ad.size();i++){
-                User prueba=ag.ad.get(i);
-                if(user.equals(prueba.getUser())&&pass.equals(prueba.getPass())){
-                out.println("<h1> "+ag.ad.get(i).getName()+" ha iniciado sesion<h1>");
-                j++;
-                }
-                if(user.equals(prueba.getUser())&&! pass.equals(prueba.getPass())){
-                out.println("<h1> "+ag.ad.get(i).getName()+" Contraseña incorrecta<h1>");
-                j++;
-                }
-                
+            for(int i=0;i<ag.usuarios.size();i++){
+                User prueba=ag.usuarios.get(i);
+                if(user.equals(prueba.getUser())&&pass.equals(prueba.getPass()))
+                    {
+                    out.println("<h1> "+ag.usuarios.get(i).getName()+" ha iniciado sesion<h1>");
+                    j++;
+                    }
+                if(user.equals(prueba.getUser())&&! pass.equals(prueba.getPass()))
+                    {
+                    out.println("<h1> "+ag.usuarios.get(i).getName()+" Contraseña incorrecta<h1>");
+                    j++;
+                    }
             }
             if(j==0){
                 out.println("<h1> "+user+" no existe en la bases de datos<h1>");

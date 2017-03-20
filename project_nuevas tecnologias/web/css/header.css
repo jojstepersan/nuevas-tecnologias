@@ -82,7 +82,7 @@ and open the template in the editor.
 */
 .menu
 {
-    position: relative;
+   /* position: relative;*/
     width: 50%;
     height: 100%;
     float: right;
@@ -90,7 +90,6 @@ and open the template in the editor.
     margin-top:10px;
     
 }
-
 .menu ul
 {
 list-style: none;    
