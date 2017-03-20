@@ -16,7 +16,7 @@
     
     <body>
         <section>
-        <form action="servlet" method="post" class="log">
+        <form action="Login" method="post" class="log">
             <h2>Log In </h2>
             <div class="imgcontainer">
                 <img src="images/user.png" alt="User" class="user">

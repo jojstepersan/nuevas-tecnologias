@@ -21,7 +21,7 @@
                         <li><a href="">Expositores</a></li>
                         <li><a href="">conferencias</a></li>
                         <li><a href="login.jsp">Log in</a></li>
-                        <li><a href="">Registrate</a></li>
+                        <li><a href="register.jsp">Registrate</a></li>
                     </ul>
                 </span>    
             </nav>
