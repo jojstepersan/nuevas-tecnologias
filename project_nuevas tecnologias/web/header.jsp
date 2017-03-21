@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page session= "true" %>
     <link rel="stylesheet" href="css/header.css">
     <header>
         <div class="header">
@@ -20,8 +21,15 @@
                         <li><a href="">Eventos</a></li>
                         <li><a href="">Expositores</a></li>
                         <li><a href="">conferencias</a></li>
-                        <li><a href="login.jsp">Log in</a></li>
-                        <li><a href="register.jsp">Registrate</a></li>
+                        <%  
+                        HttpSession sesion = request.getSession();
+                        if(sesion.getAttribute("usuario") != null){
+                          out.println("<li><a href=\"\">"+sesion.getAttribute("usuario")+"</a></li>");
+                        }else{
+                         out.println("<li><a href=\"login.jsp\">login</a></li>");
+                         out.println("<li><a href=\"register.jsp\">Registrate</a></li>");
+                        }
+                       %>        
                     </ul>
                 </span>    
             </nav>
