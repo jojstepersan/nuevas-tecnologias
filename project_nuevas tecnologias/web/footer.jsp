@@ -8,7 +8,7 @@
 <footer>        
     <div class="footer"> 
         <strong>
-            <span>Jojhan Stiven Perdomo Sánchez</span><br>
+            <span>Jojhan Stiven Perdomo Sánchez<br>Kevin Nuñez</span><br>
             <span>Nuevas Tecnologias</span><br>
             <span>3203721126</span><br>
             <span>jojhans.perdomos@konradlorenz.edu.co</span>

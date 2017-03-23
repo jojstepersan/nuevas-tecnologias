@@ -12,31 +12,43 @@
         <title>Evento</title>
         <%@include file="header.jsp"%>
         <link rel="stylesheet" href="css/evento.css">
-    </head>
+     </head>
     <body>
-           <div class="titulo"> 
-               <h1>Titulo del evento</h1>
+       
+           <div class="titulo">
+               <h1>Stop Bulling</h1>
                <hr>
-                
-            </div>
-         
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque laborum commodi suscipit vitae eius perferendis consequuntur? Modi nihil aliquam, quas deserunt vitae atque suscipit ratione rerum eveniet. Qui, adipisci ad. </p>
+           </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                Atque laborum commodi suscipit vitae eius perferendis consequuntur?
+                Modi nihil aliquam, quas deserunt vitae atque suscipit ratione
+                rerum eveniet. Qui, adipisci ad.<br><br>
+                <i>Pepito perz</i>
+            </p>  
             <div class="imagen">
-                <img src="images/slider/taller.jpg">
+                <img src="<%="images/slider/taller.jpg"%>">
             </div>
             <div class="info-evento">
                 <nav class="nav-bar">
                 <span>
                     <ul>
-                        <li><a href="" class="asistir"><strong>Asistir</a></li>
+                        <%  String log;
+                            if(false)
+                                log="register.jsp";
+                            else
+                                log="asistir.jsp";
+                        %>
+                        <li>
+                                <input type="submit" class="asistir" value="Asistir" name="asistir">           
+                            
+                        </li>
                         <li class="info"><a>N° de cupos:</a></li>
-                        <li class="data">50</li>
+                        <li class="data">30</li>
                         <li class="info"><strong>Cupos disponibles:</li>
-                        <li class="data">30</li></strong>
+                        <li class="data">10</li>
                     </ul>
                 </span>    
             </nav>
-           
             </div>
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.

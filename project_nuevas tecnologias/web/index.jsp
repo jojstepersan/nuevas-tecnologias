@@ -10,10 +10,11 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Index</title>
-        <%@include file="header.jsp"%>
+       
     </head>
    <link rel="stylesheet" href="css/index.css">
     <body>
+         <%@include file="header.jsp"%>
         <div class="slide" >
             <a href="Evento.jsp"><img class="mySlides" src="images/slider/taller.jpg" ></a>
             <img class="mySlides" src="images/slider/cliche.jpg" >
