@@ -12,6 +12,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -36,7 +37,9 @@ public class Login extends HttpServlet {
                 User prueba=ag.usuarios.get(i);
                 if(user.equals(prueba.getUser())&&pass.equals(prueba.getPass()))
                     {
-                    out.println("<h1> "+ag.usuarios.get(i).getName()+" ha iniciado sesion<h1>");
+                    HttpSession sesion = request.getSession();
+                    sesion.setAttribute("usuario",ag.usuarios.get(i).getName());
+                    response.sendRedirect("index.jsp");
                     j++;
                     }
                 if(user.equals(prueba.getUser())&&! pass.equals(prueba.getPass()))
