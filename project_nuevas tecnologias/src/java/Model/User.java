@@ -3,21 +3,41 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package Model;
 
 public class User {
-   private String name;
-   private String user;
-   private String pass;
-   private String email;
-   private String date;
+    
+    private String name;
+    private String lastName;
+    private String pass;
+    private String email;
+    private String date;
+    private String document;
 
-    public User(String name, String user, String pass, String email, String date) {
+    public User(String name, String user, String pass, String email, String date,String document) {
         this.name = name;
-        this.user = user;
+        this.lastName = user;
         this.pass = pass;
         this.email = email;
         this.date = date;
+        this.document=document;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getDocument() {
+        return document;
+    }
+    
+    public void setDocument(String document) {
+        this.document = document;
     }
 
     public String getName() {
@@ -28,13 +48,6 @@ public class User {
         this.name = name;
     }
 
-    public String getUser() {
-        return user;
-    }
-
-    public void setUser(String user) {
-        this.user = user;
-    }
 
     public String getPass() {
         return pass;
