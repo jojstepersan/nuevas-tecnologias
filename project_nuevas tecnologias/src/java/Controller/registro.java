@@ -5,6 +5,7 @@
  */
 package Controller;
 
+import Conexion.Conexion;
 import Model.*;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -18,20 +19,12 @@ import javax.servlet.http.HttpServletResponse;
  * @author kevin
  */
 public class registro extends HttpServlet {
-    public static DataBase ag= new DataBase();
+    private Conexion connection=new Conexion();
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-                String nom = request.getParameter("name");
-		String us = request.getParameter("lastname");
-                String pass = request.getParameter("pass");
-                String email = request.getParameter("email");
-                long telephone=Long.parseLong(request.getParameter("telephone"));
-                String document=request.getParameter("document");
-                String date = request.getParameter("date");
-                User nuevo= new User(nom,us,pass,email,telephone,document);
-                ag.usuarios.add(nuevo);
+                
                 response.sendRedirect("login.jsp");
         }
     }
@@ -48,6 +41,7 @@ public class registro extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
         processRequest(request, response);
     }
 
@@ -62,6 +56,15 @@ public class registro extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        String nom = request.getParameter("name");
+		String us = request.getParameter("lastname");
+                String pass = request.getParameter("pass");
+                String email = request.getParameter("email");
+                long telephone=Long.parseLong(request.getParameter("telephone"));
+                String document=request.getParameter("document");
+                String date = request.getParameter("date");
+                User newUser= new User(nom,us,pass,email,telephone,document);
+                connection.setUser(newUser);
         processRequest(request, response);
     }
 
