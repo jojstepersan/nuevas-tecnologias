@@ -24,13 +24,15 @@ public class registro extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
                 String nom = request.getParameter("name");
-		String us = request.getParameter("user");
+		String us = request.getParameter("lastname");
                 String pass = request.getParameter("pass");
-                String amil = request.getParameter("email");
+                String email = request.getParameter("email");
+                long telephone=Long.parseLong(request.getParameter("telephone"));
+                String document=request.getParameter("document");
                 String date = request.getParameter("date");
-                User nuevo= new User(nom,us,pass,amil,date);
+                User nuevo= new User(nom,us,pass,email,telephone,document);
                 ag.usuarios.add(nuevo);
-                response.sendRedirect("index.jsp");
+                response.sendRedirect("login.jsp");
         }
     }
 

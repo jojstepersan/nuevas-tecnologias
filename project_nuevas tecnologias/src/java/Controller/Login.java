@@ -18,32 +18,33 @@ import javax.servlet.http.HttpSession;
  *
  * @author kevin
  */
+
 public class Login extends HttpServlet {
     DataBase ag=registro.ag;
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            String user = request.getParameter("uname");
+            String userSt = request.getParameter("uname");
             String pass = request.getParameter("psw");
             int j=0;
             for(int i=0;i<ag.usuarios.size();i++){
-                User prueba=ag.usuarios.get(i);
-                if(user.equals(prueba.getUser())&&pass.equals(prueba.getPass()))
+                User user=ag.usuarios.get(i);
+                if(user.equals(user.getEmail())&&pass.equals(user.getPass()))
                     {
                     HttpSession sesion = request.getSession();
                     sesion.setAttribute("usuario",ag.usuarios.get(i).getName());
                     response.sendRedirect("index.jsp");
                     j++;
                     }
-                if(user.equals(prueba.getUser())&&! pass.equals(prueba.getPass()))
+                if(user.equals(user.getEmail())&&! pass.equals(user.getPass()))
                     {
                     out.println("<h1> "+ag.usuarios.get(i).getName()+" Contraseña incorrecta<h1>");
                     j++;
                     }
             }
             if(j==0){
-                out.println("<h1> "+user+" no existe en la bases de datos<h1>");
+                out.println("<h1> "+userSt+" no existe en la bases de datos<h1>");
                 j++;
                 }
 

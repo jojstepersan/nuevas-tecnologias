@@ -23,14 +23,16 @@
             <div class="container">
                 <label><strong>Nombres</strong></label>
                 <input type="text" placeholder="Ingrese nombres" name="name" required>
-                <label> <strong>Usuario</strong> </label>
-                <input type="text" placeholder="Ingrese Usuario" name="user" required>
-                <label> <strong>Contraseña</strong> </label>
-                <input type="password" placeholder="Ingrese contraseña" name="pass" required>
+                <label> <strong>Apelldios</strong> </label>
+                <input type="text" placeholder="Ingrese Usuario" name="lastname" required>
                 <label> <strong>Correo</strong> </label>
                 <input type="email" placeholder="Ingrese correo valido" name="email" required>
-                <label> <strong>Fecha de Nacimiento</strong> </label>
-                <input type="date" name="date" required>
+                <label> <strong>Contraseña</strong> </label>
+                <input type="password" placeholder="Ingrese contraseña" name="pass" required>
+                <label> <strong>Documento</strong> </label>
+                <input type="text" name="document" required>
+                <label> <strong>Celular</strong> </label>
+                <input type="tel" name="telephone" required>
                 <button type="submit">Registrar</button>
             </div>
             <div class="container" style="background-color:#f1f1f1">

@@ -12,15 +12,15 @@ public class User {
     private String lastName;
     private String pass;
     private String email;
-    private String date;
+    private long telephone;
     private String document;
 
-    public User(String name, String user, String pass, String email, String date,String document) {
+    public User(String name, String lastname, String pass, String email, long telephone,String document) {
         this.name = name;
-        this.lastName = user;
+        this.lastName = lastname;
         this.pass = pass;
         this.email = email;
-        this.date = date;
+        this.telephone = telephone;
         this.document=document;
     }
 
@@ -65,12 +65,14 @@ public class User {
         this.email = email;
     }
 
-    public String getDate() {
-        return date;
+    public long getTelephone() {
+        return telephone;
     }
 
-    public void setDate(String date) {
-        this.date = date;
+    public void setTelephone(long telephone) {
+        this.telephone = telephone;
     }
+
+  
     
 }
