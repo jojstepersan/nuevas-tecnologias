@@ -5,7 +5,7 @@
  */
 package Conexion;
 
-import Model.User;
+import Model.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -53,6 +53,23 @@ public class Conexion {
             insert.setLong(5, user.getTelephone());
             insert.setString(6, user.getPass());
             insert.setInt(7, 1);
+            insert.executeUpdate();
+            insert.close();
+                System.out.println("listo socio");
+            }catch(SQLException ex)
+            {  System.out.println("paila perro con el inser user"); }
+        }
+     public void setExositor(expositor exp)
+        {
+        try
+            {
+            insert=conexion.prepareStatement("insert into expositor values(?,?,?,?,?)");
+            insert.setString(1, exp.getDoc());
+            insert.setString(2, exp.getName());
+            insert.setString(3, exp.getLastName());
+            insert.setString(4, exp.getProfesion());
+            insert.setString(5, exp.getDescripton());
+            insert.setString(6, exp.getInves());
             insert.executeUpdate();
             insert.close();
                 System.out.println("listo socio");

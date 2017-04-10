@@ -5,11 +5,12 @@
  */
 package Controller;
 
-import Conexion.Conexion;
 import Model.*;
+import Conexion.Conexion;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -18,14 +19,22 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author kevin
  */
-public class registro extends HttpServlet {
+@WebServlet(name = "regis_exp", urlPatterns = {"/regis_exp"})
+public class regis_exp extends HttpServlet {
     private Conexion connection=new Conexion();
-    
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-                response.sendRedirect("register_suses.jsp");
-                
+            String nom = request.getParameter("name");
+		String us = request.getParameter("lastname");
+                String doc = request.getParameter("doc");
+                String des = request.getParameter("des");
+                String inves = request.getParameter("inves");
+                String prof =request.getParameter("profes");
+                expositor exp= new expositor(nom,us,doc,des,prof,inves);
+                connection.setExositor(exp);
+                processRequest(request, response);
         }
     }
 
@@ -41,7 +50,6 @@ public class registro extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
         processRequest(request, response);
     }
 
@@ -56,16 +64,7 @@ public class registro extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-                String nom = request.getParameter("name");
-		String us = request.getParameter("lastname");
-                String pass = request.getParameter("pass");
-                String email = request.getParameter("email");
-                long telephone=Long.parseLong(request.getParameter("telephone"));
-                String document=request.getParameter("document");
-                String date = request.getParameter("date");
-                User newUser= new User(nom,us,pass,email,telephone,document);
-                connection.setUser(newUser);
-                processRequest(request, response);
+        processRequest(request, response);
     }
 
     /**

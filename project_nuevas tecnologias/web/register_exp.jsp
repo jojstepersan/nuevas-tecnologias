@@ -15,8 +15,8 @@
     </head>
     <body>
         <section>
-        <form action="registro" method="POST" class="res">
-            <h2>Registro</h2>
+        <form action="regis_exp" method="POST" class="res">
+            <h2>Añadir expositor</h2>
             <div class="imgcontainer">
                 <img src="images/user.png" alt="User" class="user">
             </div>
@@ -25,21 +25,16 @@
                 <input type="text" placeholder="Ingrese nombres" name="name" required>
                 <label> <strong>Apellidos</strong> </label>
                 <input type="text" placeholder="Ingrese Usuario" name="lastname" required>
-                <label> <strong>Correo</strong> </label>
-                <input type="email" placeholder="Ingrese correo valido" name="email" required>
-                <label> <strong>Contraseña</strong> </label>
-                <input type="password" placeholder="Ingrese contraseña" name="pass" required>
                 <label> <strong>Documento</strong> </label>
-                <input type="text" name="document" required>
-                <label> <strong>Celular</strong> </label>
-                <input type="tel" name="telephone" required>
-                <button type="submit">Registrar</button>
+                <input type="text" placeholder="Ingrese Usuario" name="doc" required>
+                <label> <strong>descripcion</strong> </label>
+                <textarea rows="4" cols="50" name="des">
+                </textarea>
+                <label> <strong>investigaciones</strong> </label>
+                <textarea rows="4" cols="50" name="inves">
+                </textarea>
+                <button type="submit">Añadir</button>
             </div>
-            <div class="container" style="background-color:#f1f1f1">
-                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-                <span class="psw">Forgot <a href="#">password?</a></span>
-            </div>
-            
         </form>
         </section>
         
