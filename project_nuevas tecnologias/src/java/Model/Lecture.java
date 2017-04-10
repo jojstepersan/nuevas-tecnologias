@@ -5,14 +5,10 @@
  */
 package Model;
 
-import java.util.ArrayList;
-
 /**
  *
  * @author Stiven
  */
-public class Event {
-    private String title;
-    private ArrayList<Conference> ListConferences;
+class Lecture {
     
 }

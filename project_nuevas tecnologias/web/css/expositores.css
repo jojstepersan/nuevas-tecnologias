@@ -1,0 +1,71 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Apr 10, 2017, 12:06:18 PM
+    Author     : Stiven
+*/
+.container-expo
+{
+    position: relative;
+    width: 70%;
+    height: 400px;
+    left: 15%;
+    border:2px solid black;
+    margin-bottom: 30px;
+}
+.expositor
+{
+width: 70%;
+height: 100%;
+float:right;
+}
+.image_expo
+{
+    width: 30%;
+    height: 100%;
+    float: left;
+}
+img
+{
+width: 80%;
+height: 50%;
+left: 10%;
+margin-left: 10%;
+    
+}
+.expositor p
+{
+    margin-left: 10%;
+    margin-right: 10%;
+    text-align: justify;
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    font-style:  normal;
+    width: 500px;
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid black;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    border: 1px solid black;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+    border: 1px solid black;
+}
+
+a:link    {color:green; background-color:transparent; text-decoration:none}
+a:visited {color:blue; background-color:transparent; text-decoration:none}
+a:hover   {color:red; background-color:transparent; text-decoration:underline}
+a:active  {color:yellow; background-color:transparent; text-decoration:underline}

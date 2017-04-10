@@ -16,15 +16,15 @@
                 <span>
                     <ul>
                         <li><a href="index.jsp">Inicio</a></li>
-                        <li><a href="">Eventos</a></li>
-                        <li><a href="">Expositores</a></li>
-                        <li><a href="">conferencias</a></li>
+                        
+                        <li><a href="Conference.jsp">Conferencias</a></li>
+                        <li><a href="expositors.jsp">Expositores</a></li>
                         <%  
                         HttpSession sesion = request.getSession();
                         if(sesion.getAttribute("usuario") != null){
                           out.println("<li><a href=\"\">"+sesion.getAttribute("usuario")+"</a></li>");
                         }else{
-                         out.println("<li><a href=\"login.jsp\">login</a></li>");
+                         out.println("<li><a href=\"login.jsp\">Ingresar</a></li>");
                          out.println("<li><a href=\"register.jsp\">Registrate</a></li>");
                         }
                        %>        

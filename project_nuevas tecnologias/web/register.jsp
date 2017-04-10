@@ -11,19 +11,20 @@
         <meta http-equiv="Content-Type"   content="text/html; charset=UTF-8">
         <title>Registro</title>
         <link rel="stylesheet" href="css/style.css">
-        <%@include file="header.jsp"%>
+       
     </head>
     <body>
+         <%@include file="header.jsp"%>
         <section>
         <form action="registro" method="POST" class="res">
             <h2>Registro</h2>
             <div class="imgcontainer">
-                <img src="images/user.png" alt="User" class="user">
+                <img src="images/user_dark.png" alt="User" class="user">
             </div>
             <div class="container">
                 <label><strong>Nombres</strong></label>
                 <input type="text" placeholder="Ingrese nombres" name="name" required>
-                <label> <strong>Apellidos</strong> </label>
+                <label> <strong>Apelldios</strong> </label>
                 <input type="text" placeholder="Ingrese Usuario" name="lastname" required>
                 <label> <strong>Correo</strong> </label>
                 <input type="email" placeholder="Ingrese correo valido" name="email" required>

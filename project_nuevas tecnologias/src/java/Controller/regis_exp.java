@@ -26,15 +26,8 @@ public class regis_exp extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            String nom = request.getParameter("name");
-		String us = request.getParameter("lastname");
-                String doc = request.getParameter("doc");
-                String des = request.getParameter("des");
-                String inves = request.getParameter("inves");
-                String prof =request.getParameter("profes");
-                expositor exp= new expositor(nom,us,doc,des,prof,inves);
-                connection.setExositor(exp);
-                processRequest(request, response);
+           
+                 response.sendRedirect("register_exp.jsp");
         }
     }
 
@@ -64,6 +57,15 @@ public class regis_exp extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+         String nom = request.getParameter("name");
+		String us = request.getParameter("lastname");
+                String doc = request.getParameter("doc");
+                String des = request.getParameter("des");
+                String inves = request.getParameter("inves");
+                String prof =request.getParameter("profes");
+                System.out.println(us.length()+" "+doc+" "+des.length()+" "+inves.length()+" "+prof);
+                Expositor exp= new Expositor(nom,us,doc,des,prof,inves);
+                connection.setExpositor(exp);
         processRequest(request, response);
     }
 

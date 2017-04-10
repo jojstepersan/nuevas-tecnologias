@@ -5,27 +5,38 @@
  */
 package Controller;
 
-import Conexion.Conexion;
-import Model.*;
+import Model.Conference;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author kevin
+ * @author Stiven
  */
-public class registro extends HttpServlet {
-    private Conexion connection=new Conexion();
-    
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
+
+@WebServlet(name = "AddConference", urlPatterns = {"/AddConference"})
+public class AddConference extends HttpServlet {
+public static Conference conference=new Conference();
+    /**
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
+     * methods.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-                
-                response.sendRedirect("login.jsp");
+            /* TODO output your page here. You may use following sample code. */
+            response.sendRedirect("addImage.jsp");
         }
     }
 
@@ -41,7 +52,6 @@ public class registro extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
         processRequest(request, response);
     }
 
@@ -56,15 +66,17 @@ public class registro extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String nom = request.getParameter("name");
-		String us = request.getParameter("lastname");
-                String pass = request.getParameter("pass");
-                String email = request.getParameter("email");
-                long telephone=Long.parseLong(request.getParameter("telephone"));
-                String document=request.getParameter("document");
-                String date = request.getParameter("date");
-                User newUser= new User(nom,us,pass,email,telephone,document);
-                connection.setUser(newUser);
+        conference=new Conference();
+        System.out.println("entre");
+        conference.setTitle(request.getParameter("title"));
+        String expositor=request.getParameter("selectExpositor"); 
+        String[] aux=expositor.split(":");
+        String documento=aux[0];
+        conference.setDocExpositer(documento);
+        conference.setShare(Integer.valueOf(request.getParameter("number")));
+        conference.setIntroduction(request.getParameter("introduction"));
+        conference.setParagraphs(request.getParameter("description"));
+       
         processRequest(request, response);
     }
 

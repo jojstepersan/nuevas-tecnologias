@@ -17,9 +17,9 @@
     <body>
         <section>
         <form action="Login" method="post" class="log">
-            <h2>Log In </h2>
+            <h2>Ingresar </h2>
             <div class="imgcontainer">
-                <img src="images/user.png" alt="User" class="user">
+                <img src="images/user_dark.png" alt="User" class="user">
             </div>
             <div class="container">
                 <label><strong>Usuario</strong></label>
@@ -35,8 +35,7 @@
             
         </form>
         </section>
-        <%@include file="footer.jsp" %>
+       
          
     </body>
-   
 </html>

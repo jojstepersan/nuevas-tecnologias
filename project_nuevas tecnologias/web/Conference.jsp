@@ -4,18 +4,25 @@
     Author     : Stiven
 --%>
 
+<%@page import="java.util.ArrayList"%>
+<%@page import="Model.Conference"%>
+<%@page import="Conexion.Conexion"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Evento</title>
+        <title>Confenrencia</title>
         <%@include file="header.jsp"%>
         <link rel="stylesheet" href="css/evento.css">
      </head>
     <body>
-       
-           <div class="titulo">
+        <a href="addConference.jsp">Agregar conferencia</a>
+        <%Conexion con=new Conexion();
+        ArrayList<Conference>listConfenrece;
+        %>   
+        
+        <div class="titulo">
                <h1>Stop Bulling</h1>
                <hr>
            </div>
@@ -26,7 +33,7 @@
                 <i>Pepito perz</i>
             </p>  
             <div class="imagen">
-                <img src="<%="images/slider/taller.jpg"%>">
+                <img src="">
             </div>
             <div class="info-evento">
                 <nav class="nav-bar">

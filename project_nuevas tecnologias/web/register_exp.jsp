@@ -24,14 +24,16 @@
                 <label><strong>Nombres</strong></label>
                 <input type="text" placeholder="Ingrese nombres" name="name" required>
                 <label> <strong>Apellidos</strong> </label>
-                <input type="text" placeholder="Ingrese Usuario" name="lastname" required>
+                <input type="text" placeholder="Ingrese apellido" name="lastname" required>
                 <label> <strong>Documento</strong> </label>
-                <input type="text" placeholder="Ingrese Usuario" name="doc" required>
-                <label> <strong>descripcion</strong> </label>
-                <textarea rows="4" cols="50" name="des">
+                <input type="text" placeholder="Ingrese documento" name="doc" required>
+                <label> <strong>Profeción</strong> </label>
+                <input type="text" placeholder="Ingrese profeción" name="profes" required>
+               <label> <strong>descripcion</strong> </label>
+                <textarea rows="4" cols="50" name="des" data-toggle="tooltip" data-placement="data-toggle">
                 </textarea>
                 <label> <strong>investigaciones</strong> </label>
-                <textarea rows="4" cols="50" name="inves">
+                <textarea rows="4" cols="50" name="inves" data-toggle="tooltip" data-placement="data-toggle">
                 </textarea>
                 <button type="submit">Añadir</button>
             </div>
