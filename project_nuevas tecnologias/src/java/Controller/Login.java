@@ -28,21 +28,21 @@ public class Login extends HttpServlet {
             String userSt = request.getParameter("uname");
             String pass = request.getParameter("psw");
             int j=0;
-            for(int i=0;i<ag.usuarios.size();i++){
-                User user=ag.usuarios.get(i);
-                if(user.equals(user.getEmail())&&pass.equals(user.getPass()))
-                    {
-                    HttpSession sesion = request.getSession();
-                    sesion.setAttribute("usuario",ag.usuarios.get(i).getName());
-                    response.sendRedirect("index.jsp");
-                    j++;
-                    }
-                if(user.equals(user.getEmail())&&! pass.equals(user.getPass()))
-                    {
-                    out.println("<h1> "+ag.usuarios.get(i).getName()+" Contraseña incorrecta<h1>");
-                    j++;
-                    }
-            }
+//            for(int i=0;i<ag.usuarios.size();i++){
+//                User user=ag.usuarios.get(i);
+//                if(user.equals(user.getEmail())&&pass.equals(user.getPass()))
+//                    {
+//                    HttpSession sesion = request.getSession();
+//                    sesion.setAttribute("usuario",ag.usuarios.get(i).getName());
+//                    response.sendRedirect("index.jsp");
+//                    j++;
+//                    }
+//                if(user.equals(user.getEmail())&&! pass.equals(user.getPass()))
+//                    {
+//                    out.println("<h1> "+ag.usuarios.get(i).getName()+" Contraseña incorrecta<h1>");
+//                    j++;
+//                    }
+//            }
             if(j==0){
                 out.println("<h1> "+userSt+" no existe en la bases de datos<h1>");
                 j++;
