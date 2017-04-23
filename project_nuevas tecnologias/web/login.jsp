@@ -11,10 +11,11 @@
         <meta http-equiv="Content-Type"   content="text/html; charset=UTF-8">
         <title>LogIn with servlet</title>
         <link rel="stylesheet" href="css/style.css">
-        <%@include file="header.jsp"%>
+       
     </head>
     
     <body>
+         <%@include file="header.jsp"%>
         <section>
         <form action="Login" method="post" class="log">
             <h2>Ingresar </h2>

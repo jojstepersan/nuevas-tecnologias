@@ -13,10 +13,11 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Confenrencia</title>
-        <%@include file="header.jsp"%>
+    
         <link rel="stylesheet" href="css/evento.css">
      </head>
     <body>
+            <%@include file="header.jsp"%>
         <a href="addConference.jsp">Agregar conferencia</a>
         <%Conexion con=new Conexion();
         ArrayList<Conference>listConfenrece;

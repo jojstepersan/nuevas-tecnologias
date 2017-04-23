@@ -15,9 +15,10 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Expositores</title>
         <link rel="stylesheet" href="css/expositores.css">
-         <%@include file="header.jsp"%>
+        
     </head>
     <body>
+         <%@include file="header.jsp"%>
         <section>
             <h1>Expositores</h1>
             <a href="register_exp.jsp">Agregar expositor</a>

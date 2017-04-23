@@ -71,12 +71,12 @@ public class Conexion {
             insert.setString(2, exp.getName());
             insert.setString(3, exp.getLastName());
             insert.setString(4, exp.getProfesion());
-            insert.setString(5, exp.getDescripton());
+            insert.setString(5, exp.getBibliography());
             insert.setString(6, exp.getInves());
             insert.executeUpdate();
             insert.close();
                 System.out.println(exp.getProfesion());
-                System.out.println(exp.getDescripton());
+                System.out.println(exp.getBibliography());
                 System.out.println(exp.getInves());
             }catch(SQLException ex)
             {  System.out.println("paila perro con el insert expositor"); }
