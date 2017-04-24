@@ -16,7 +16,7 @@
     <body>
          <%@include file="header.jsp"%>
         <section>
-        <form action="registro" method="POST" class="res">
+        <form action="registro" method="post" class="res">
             <h2>Registro</h2>
             <div class="imgcontainer">
                 <img src="images/user_dark.png" alt="User" class="user">
@@ -36,15 +36,8 @@
                 <input type="tel" name="telephone" required>
                 <button type="submit">Registrar</button>
             </div>
-            <div class="container" style="background-color:#f1f1f1">
-                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-                <span class="psw">Forgot <a href="#">password?</a></span>
-            </div>
-            
         </form>
         </section>
-        
-   
          
     </body>
 </html>

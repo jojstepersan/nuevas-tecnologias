@@ -15,7 +15,6 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Expositores</title>
         <link rel="stylesheet" href="css/expositores.css">
-        
     </head>
     <body>
          <%@include file="header.jsp"%>
@@ -24,8 +23,7 @@
             <a href="register_exp.jsp">Agregar expositor</a>
             <table>
             <%Conexion con=new Conexion();
-            ArrayList<Expositor> list=con.getExpositor();
-            
+            ArrayList<Expositor> list=con.getExpositor();  
             for(int i=0;i<list.size();i++)
                 {
                 Expositor expositor=list.get(i);
@@ -36,7 +34,7 @@
                 </div>
                 <div class="expositor">
                     <strong>Nombre :</strong> <p><%=expositor.getName()%> <%=expositor.getLastName()%></p><br>
-                     <strong>Descripción :</strong>  <p><%=expositor.getDescripton()%></p>
+                    <strong>Descripción :</strong>  <p><%=expositor.getBibliography()%></p>
                      <strong>Profeción :</strong>  <p><%=expositor.getProfesion()%></p>
                     <strong><i>Investigación :  </i></strong><p><%=expositor.getInves()%></p>
                </div>

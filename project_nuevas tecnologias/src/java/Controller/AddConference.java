@@ -76,7 +76,6 @@ public static Conference conference=new Conference();
         conference.setShare(Integer.valueOf(request.getParameter("number")));
         conference.setIntroduction(request.getParameter("introduction"));
         conference.setParagraphs(request.getParameter("description"));
-       
         processRequest(request, response);
     }
 

@@ -58,7 +58,7 @@ public class Conexion {
             insert.setInt(7, 1);
             insert.executeUpdate();
             insert.close();
-                System.out.println("listo socio");
+                System.out.println("listo socio se registro el suario");
             }catch(SQLException ex)
             {  System.out.println("paila perro con el inser user"); }
         }
@@ -134,6 +134,7 @@ public class Conexion {
             insert.setString(6, conference.getDocExpositer());
             insert.executeUpdate();
             insert.close();
+            System.out.println("listo el insert fe la expo");
             }catch(SQLException ex)
                 {
                     System.out.println("paila con la inseercion de la conferencia");

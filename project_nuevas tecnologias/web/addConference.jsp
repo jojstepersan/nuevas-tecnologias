@@ -18,7 +18,7 @@
     </head>
     <body>
         <section>
-            <form action="AddConference"  method="post">
+            <form action="AddConference"  method="POST">
             <h1>Agregar cofenrencia</h1>
             <label><strong>Titulo de la conferencia</strong></label>
             <input type="text" placeholder="Añadir titulo" name="title">
@@ -40,6 +40,8 @@
             <textarea rows="10" cols="80" name="description"></textarea>
             <label><strong>Cupos</strong></label>
             <input type="number" name="number">
+            <label><Strong>Horario</Strong></label>
+            <input type="date" name="date">
             <button type="submit"><a href="addImage.jsp"><strong>Continuar</strong></a></button>
         </form>
               

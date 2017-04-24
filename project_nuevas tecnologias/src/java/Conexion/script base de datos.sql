@@ -70,3 +70,17 @@ cod_classroom int not null primary key,
 name_classroom varchar(11)
 );
 
+create table day(
+cod_day int primary key,
+nom_day varchar(10)
+);
+/*dias de la semana*/
+
+delete  from day where cod_day=6;
+insert into day values(1,'Lunes');
+insert into day values(2,'Martes');
+insert into day values(3,'Miercoles');
+insert into day values(4,'Jueves');
+insert into day values(5,'Viernes');
+insert into day values(6,'Sabado');
+insert into day values(7,'Domingo');
