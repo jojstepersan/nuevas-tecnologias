@@ -22,7 +22,7 @@ doc_expositor varchar(30),
  foreign key (doc_expositor) references expositor(doc_expositor)
 );
 
-CREATE TABLE user (
+CREATE TABLE userp(
    email_user varchar(50) NOT NULL,
    nom_user varchar(50) DEFAULT NULL,
    lastname_user varchar(50) DEFAULT NULL,
@@ -49,7 +49,7 @@ cod_conference int,
 cod_classroom int,
 cod_schelude int,
 share_available int ,
-foreign key (cod_user) references user (email_user),
+foreign key (cod_user) references userp(email_user),
 foreign key (cod_conference) references conference(cod_conference),
 foreign key (cod_classroom) references classroom(cod_classroom),
 foreign key (cod_schelude) references schelude(cod_schelude)
