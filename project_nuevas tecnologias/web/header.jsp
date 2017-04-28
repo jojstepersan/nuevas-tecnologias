@@ -23,11 +23,12 @@
                         HttpSession sesion = request.getSession();
                         if(sesion.getAttribute("usuario") != null){
                           out.println("<li><a href=\"\">"+sesion.getAttribute("usuario")+"</a></li>");
+                          out.println("<li><a href=\"login.jsp\">Cerrar Sesion</a></li>");
                         }else{
                          out.println("<li><a href=\"login.jsp\">Ingresar</a></li>");
                          out.println("<li><a href=\"register.jsp\">Registrate</a></li>");
                         }
-                       %>        
+                       %>          
                     </ul>
                 </span>    
             </nav>

@@ -15,6 +15,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -62,6 +64,7 @@ public class Conexion {
             }catch(SQLException ex)
             {  System.out.println("paila perro con el inser user"); }
         }
+    
      public void setExpositor(Expositor exp)
         {
         try
@@ -140,6 +143,25 @@ public class Conexion {
                     System.out.println("paila con la inseercion de la conferencia");
                 }
         }
+    
+    public User getUser(String email, String pass ) {
+        User Us=null;
+        try {
+            String sql="Select * FROM user WHERE email_user='"+email+"' && password_user='"+pass+"'";
+            read=statement.executeQuery(/*"Select * from user where email_user=? && password_user=?"*/sql);
+          
+        while(read.next()){
+            //cel=Long.parseLong(read.getString("email_user")); 
+            Us= new User(read.getString(2),read.getString(3),read.getString(6),read.getString(1),read.getLong(5),read.getString(4));
+        } } catch (SQLException ex) {
+            System.out.println("paila con la busqueda del man");}
+        return Us;
+    }
+    
     public static void main(String[] args) {
+        
+        Conexion c=new Conexion();
+        User s=c.getUser("alian@turin", "12345");
+        System.out.println(s.getName()+" "+s.getLastName());
     }
 }

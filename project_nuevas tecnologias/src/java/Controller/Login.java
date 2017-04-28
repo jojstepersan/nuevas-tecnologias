@@ -5,10 +5,12 @@
  */
 package Controller;
 
+import Conexion.Conexion;
 import Model.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -19,9 +21,10 @@ import javax.servlet.http.HttpSession;
  * @author kevin
  */
 
+@WebServlet(name = "Login", urlPatterns = {"/Login"})
 public class Login extends HttpServlet {
    
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+    /*protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
@@ -49,7 +52,35 @@ public class Login extends HttpServlet {
                 }
 
         }
-    }
+    }*/
+    
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        try (PrintWriter out = response.getWriter())
+            {
+            Conexion cn = new Conexion();
+            String userSt = request.getParameter("uname");
+            String pass = request.getParameter("psw");
+            User us;
+            us = cn.getUser(userSt, pass);
+            if(userSt.equals(us.getEmail())&&pass.equals(us.getPass()))
+                {
+                HttpSession sesion = request.getSession();                    
+                sesion.setAttribute("usuario",us.getName());
+                response.sendRedirect("index.jsp");
+                }
+            if(userSt.equals(us.getEmail())&&!pass.equals(us.getPass()))
+                {
+                out.println("<h1>El Usuario o la contraseña son incorrectos<h1>");
+                }
+            }
+           
+        //response.sendRedirect("index.jsp");
+        }
+               
+
+        
+    
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -75,8 +106,24 @@ public class Login extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
+       /* try (PrintWriter out = response.getWriter())
+            {
+            Conexion cn = new Conexion();
+            String userSt = request.getParameter("uname");
+            String pass = request.getParameter("psw");
+            User us;
+             us = cn.getUser(userSt, pass);
+             if(userSt.equals(us.getEmail())&&pass.equals(us.getPass()))
+                {
+                 HttpSession sesion = request.getSession();                    
+                 sesion.setAttribute("usuario",us.getName());
+                 response.sendRedirect("index.jsp");
+                }
+             else if(userSt.equals(us.getEmail())&&!pass.equals(us.getPass()))
+                out.println("<h1>El Usuario o la contraseña son incorrectos<h1>");
+            }*/       
+        System.out.println("hola perro");
         processRequest(request, response);
     }
 

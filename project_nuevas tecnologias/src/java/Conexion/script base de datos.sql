@@ -21,8 +21,10 @@ image varchar(50),
 doc_expositor varchar(30),
  foreign key (doc_expositor) references expositor(doc_expositor)
 );
+select *from user
 
-CREATE TABLE userp(
+
+CREATE TABLE user(
    email_user varchar(50) NOT NULL,
    nom_user varchar(50) DEFAULT NULL,
    lastname_user varchar(50) DEFAULT NULL,
@@ -32,7 +34,7 @@ CREATE TABLE userp(
    cod_type int(11) DEFAULT NULL,
    PRIMARY KEY (email_user),
    KEY cod_type (cod_type),
-   CONSTRAINT user_ibfk_1 FOREIGN KEY (cod_type) REFERENCES type_user (cod_type)
+   CONSTRAINT user_ibfk_1 FOREIGN KEY (cod_type) REFERENCES type_user(cod_type)
  ) ENGINE=InnoDB DEFAULT CHARSET=utf8
 
 CREATE TABLE type_user (
@@ -74,9 +76,8 @@ create table day(
 cod_day int primary key,
 nom_day varchar(10)
 );
-/*dias de la semana*/
 
-delete  from day where cod_day=6;
+delete  from user;
 insert into day values(1,'Lunes');
 insert into day values(2,'Martes');
 insert into day values(3,'Miercoles');
