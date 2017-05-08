@@ -34,7 +34,7 @@ public class Conexion {
         try
             {
             Class.forName("com.mysql.jdbc.Driver");
-            conexion=DriverManager.getConnection("jdbc:mysql://localhost/paginaKonrad?user=root&password=Cc1018499056");
+            conexion=DriverManager.getConnection("jdbc:mysql://localhost/paginaKonrad?user=root&password=12345");
             statement=conexion.createStatement();
             }catch(ClassNotFoundException e)
                 {

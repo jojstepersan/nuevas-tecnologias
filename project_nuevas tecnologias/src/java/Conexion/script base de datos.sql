@@ -24,7 +24,7 @@ CREATE TABLE usuario(
 
 create table expositor(
 doc_expositor varchar(30) primary key,
-name_expositor varchar(50),user
+name_expositor varchar(50),
 last_name varchar(50),
 profecion varchar(50),
 description varchar(300),
@@ -57,7 +57,7 @@ foreign key (cod_user) references usuario(email_user),
 foreign key (cod_conference) references conference(cod_conference),
 foreign key (cod_classroom) references classroom(cod_classroom)
 );
-select*from conference;
+drop table session_conference
 /*tabla horario
 
 create table schelude(
