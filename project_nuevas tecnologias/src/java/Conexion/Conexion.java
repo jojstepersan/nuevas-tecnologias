@@ -50,7 +50,7 @@ public class Conexion {
         {
         try
             {
-            insert=conexion.prepareStatement("insert into user values(?,?,?,?,?,?,?)");
+            insert=conexion.prepareStatement("insert into usuario values(?,?,?,?,?,?,?)");
             insert.setString(1, user.getEmail());
             insert.setString(2, user.getName());
             insert.setString(3, user.getLastName());
@@ -147,9 +147,8 @@ public class Conexion {
     public User getUser(String email, String pass ) {
         User Us=null;
         try {
-            String sql="Select * FROM user WHERE email_user='"+email+"' && password_user='"+pass+"'";
+            String sql="Select * FROM usuario WHERE email_user='"+email+"' && password_user='"+pass+"'";
             read=statement.executeQuery(/*"Select * from user where email_user=? && password_user=?"*/sql);
-          
         while(read.next()){
             //cel=Long.parseLong(read.getString("email_user")); 
             Us= new User(read.getString(2),read.getString(3),read.getString(6),read.getString(1),read.getLong(5),read.getString(4));

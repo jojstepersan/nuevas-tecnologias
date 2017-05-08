@@ -65,7 +65,7 @@ public class Login extends HttpServlet {
             us = cn.getUser(userSt, pass);
             if(userSt.equals(us.getEmail())&&pass.equals(us.getPass()))
                 {
-                HttpSession sesion = request.getSession();                    
+                HttpSession sesion = request.getSession();      
                 sesion.setAttribute("usuario",us.getName());
                 response.sendRedirect("index.jsp");
                 }

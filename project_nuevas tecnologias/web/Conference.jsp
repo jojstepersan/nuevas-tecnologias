@@ -17,8 +17,8 @@
         <link rel="stylesheet" href="css/evento.css">
      </head>
     <body>
-            <%@include file="header.jsp"%>
-        <a href="addConference.jsp">Agregar conferencia</a>
+        <%@include file="header.jsp"%>
+       
         <%Conexion con=new Conexion();
         ArrayList<Conference>listConfenrece;
         %>   

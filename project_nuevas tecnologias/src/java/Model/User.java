@@ -14,6 +14,15 @@ public class User {
     private String email;
     private long telephone;
     private String document;
+    private int type;
+
+    public int getType() {
+        return type;
+    }
+
+    public void setType(int type) {
+        this.type = type;
+    }
 
     public User(String name, String lastname, String pass, String email, long telephone,String document) {
         this.name = name;
