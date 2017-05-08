@@ -15,6 +15,9 @@
             <nav class="menu">
                 <span>
                     <ul>
+                        <li><a href="addConference.jsp">Add Conference</a></li>
+                        <li><a href="register_exp.jsp">Add Expositor</a></li>
+                        
                         <li><a href="index.jsp">Inicio</a></li>
                         
                         <li><a href="listConference.jsp">Conferencias</a></li>

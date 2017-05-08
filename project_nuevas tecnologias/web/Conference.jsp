@@ -34,7 +34,7 @@
                 <i>Pepito perz</i>
             </p>  
             <div class="imagen">
-                <img src="">
+                <img src="images/slider/cine.jpg">
             </div>
             <div class="info-evento">
                 <nav class="nav-bar">

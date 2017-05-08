@@ -20,7 +20,6 @@
          <%@include file="header.jsp"%>
         <section>
             <h1>Expositores</h1>
-            <a href="register_exp.jsp">Agregar expositor</a>
             <table>
             <%Conexion con=new Conexion();
             ArrayList<Expositor> list=con.getExpositor();  

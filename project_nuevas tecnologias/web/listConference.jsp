@@ -19,7 +19,6 @@
     
     <body>
         <%@include file="header.jsp" %>
-         <a href="addConference.jsp">Agregar conferencia</a>
         <section>
             <h2>LISTA DE CONFERENCIAS</h2>
             <table class="confer">
@@ -39,7 +38,7 @@
                                 <div class="imgcontainer">
                                     <img src="images/<%=con1.getImage()%>" alt="User" class="user">
                                 </div>
-                                <a href="">Ver más</a>
+                                <a href="Conference.jsp">Ver más</a>
                             </form>
                         </td>
                         <% if(listConference.size()-1-i>0)
@@ -52,7 +51,7 @@
                                 <div class="imgcontainer">
                                     <img src="images/<%=con2.getImage()%>" alt="User" class="user">
                                 </div>
-                                <a>Ver más</a>
+                                <a href="Conference.jsp">Ver más</a>
                             </form>
                         </td>
                         <%}%>
