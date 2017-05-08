@@ -27,6 +27,7 @@
                     <%
                     Conexion conexion=new Conexion();
                     ArrayList<Conference> listConference=conexion.getConference();
+                    if(!listConference.isEmpty())
                     for(int i=0;i<listConference.size();i+=2){
                     Conference con1=listConference.get(i);
                     Conference con2=null;
