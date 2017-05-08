@@ -1,13 +1,14 @@
-create database paginakonrad .
+create database paginakonrad;
 
-use paginakonrad
+use paginakonrad;
 
 CREATE TABLE type_user (
    cod_type int(11) NOT NULL,
    non_type varchar(20) DEFAULT NULL,
    PRIMARY KEY (cod_type)
  ) ENGINE=InnoDB DEFAULT CHARSET=utf8
- 
+;
+
 CREATE TABLE usuario(
    email_user varchar(50) NOT NULL,
    nom_user varchar(50) DEFAULT NULL,
@@ -19,7 +20,7 @@ CREATE TABLE usuario(
    PRIMARY KEY (email_user),
    KEY cod_type (cod_type),
    CONSTRAINT user_ibfk_1 FOREIGN KEY (cod_type) REFERENCES type_user(cod_type)
- ) ENGINE=InnoDB DEFAULT CHARSET=utf8
+ ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
 create table expositor(
@@ -57,7 +58,6 @@ foreign key (cod_user) references usuario(email_user),
 foreign key (cod_conference) references conference(cod_conference),
 foreign key (cod_classroom) references classroom(cod_classroom)
 );
-drop table session_conference
 /*tabla horario
 
 create table schelude(
