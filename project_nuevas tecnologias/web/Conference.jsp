@@ -26,7 +26,7 @@
         <div class="titulo">
                <h1>Stop Bulling</h1>
                <hr>
-           </div>
+        </div>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
                 Atque laborum commodi suscipit vitae eius perferendis consequuntur?
                 Modi nihil aliquam, quas deserunt vitae atque suscipit ratione

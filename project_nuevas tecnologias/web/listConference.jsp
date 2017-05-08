@@ -39,7 +39,6 @@
                                 <div class="imgcontainer">
                                     <img src="images/<%=con1.getImage()%>" alt="User" class="user">
                                 </div>
-                                <p>va a estar bine chingona</p>
                                 <a href="">Ver más</a>
                             </form>
                         </td>

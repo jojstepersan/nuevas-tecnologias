@@ -58,6 +58,7 @@ foreign key (cod_user) references usuario(email_user),
 foreign key (cod_conference) references conference(cod_conference),
 foreign key (cod_classroom) references classroom(cod_classroom)
 );
+
 /*tabla horario
 
 create table schelude(

@@ -11,9 +11,10 @@
         <meta http-equiv="Content-Type"   content="text/html; charset=UTF-8">
         <title>Registro</title>
         <link rel="stylesheet" href="css/style.css">
-        <%@include file="header.jsp"%>
+       
     </head>
     <body>
+        <%@include file="header.jsp"%>
         <section>
         <form action="regis_exp" method="POST" class="res">
             <h2>Añadir expositor</h2>
