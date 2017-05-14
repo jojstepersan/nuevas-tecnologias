@@ -84,12 +84,13 @@ public class AddImage extends HttpServlet {
                 {
                 AddConference.conference.setImage(item.getName());    
                 urlImage="C:\\Users\\Stiven\\Documents\\NetBeansProjects\\nuevas-tecnologias\\project_nuevas tecnologias\\web\\images\\"+item.getName();   
+                //urlImage="./NetBeansProjects/nuevas-tecnologias/project_nuevas tecnologias/web/images/"+item.getName();
                 File file=new File(urlImage);
                 try {
                     item.write(file);
                     } catch (Exception ex) 
                         {
-                        System.out.println("paila perro con la conferencia");
+                        System.out.println("paila perro con la conferencia la imagen paila");
                         }
                 
                }

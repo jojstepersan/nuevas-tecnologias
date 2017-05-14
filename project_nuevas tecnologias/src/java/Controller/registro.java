@@ -22,20 +22,23 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "registro", urlPatterns = {"/registro"})
 public class registro extends HttpServlet {
     private Conexion connection=new Conexion();
-    
+    public static void main(String[] args) {
+        String str=System.getProperty("os.name");
+        System.out.println(str);
+    }
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             
-                String nom = request.getParameter("name");
-		String us = request.getParameter("lastname");
-                String pass = request.getParameter("pass");
-                String email = request.getParameter("email");
-                long telephone=Long.parseLong(request.getParameter("telephone"));
-                String document=request.getParameter("document");
-                String date = request.getParameter("date");
-                User newUser= new User(nom,us,pass,email,telephone,document);
-                connection.setUser(newUser);
+//                String nom = request.getParameter("name");
+//		String us = request.getParameter("lastname");
+//                String pass = request.getParameter("pass");
+//                String email = request.getParameter("email");
+//                long telephone=Long.parseLong(request.getParameter("telephone"));
+//                String document=request.getParameter("document");
+//                String date = request.getParameter("date");
+//                User newUser= new User(nom,us,pass,email,telephone,document);
+//                connection.setUser(newUser);
                 response.sendRedirect("login.jsp");
         }
     }
@@ -67,8 +70,8 @@ public class registro extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        System.out.println("hola que hace");
-        String nom = request.getParameter("name");
+                System.out.println("hola que hace");
+                String nom = request.getParameter("name");
 		String us = request.getParameter("lastname");
                 String pass = request.getParameter("pass");
                 String email = request.getParameter("email");
@@ -76,8 +79,8 @@ public class registro extends HttpServlet {
                 String document=request.getParameter("document");
                 String date = request.getParameter("date");
                 User newUser= new User(nom,us,pass,email,telephone,document);
-               // connection.setUser(newUser);
-        processRequest(request, response);
+                connection.setUser(newUser);
+                processRequest(request, response);
     }
 
     /**

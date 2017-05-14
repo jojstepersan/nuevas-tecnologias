@@ -4,6 +4,9 @@
     Author     : Stiven
 --%>
 
+<%@page import="java.util.ArrayList"%>
+<%@page import="Model.Conference"%>
+<%@page import="Conexion.Conexion"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -13,26 +16,27 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     </head>
     <body>
+       
+        <%  Conexion con=new Conexion();
+            ArrayList<Conference>listConference=con.getConference();
+        %>
          <%@include file="header.jsp"%>
+          <h1>Conferencias k</h1>
          <div class="w3-content w3-display-container" >
-            <img class="mySlides" src="images/slider/cliche.jpg" style="width:100%">
-            <img class="mySlides" src="images/slider/cine.jpg" style="width:100%">
-            <img class="mySlides" src="images/slider/mujer_cine.jpg" style="width:100%">
+             <%for(int i=0;i<listConference.size();i++){%>
+             <img class="mySlides" src="images/<%=listConference.get(i).getImage()%>" style="width:100%;height:500px; ">
+            <%}%>
+            <!--img class="mySlides" src="images/slider/cine.jpg" style="width:100%">
+            <img class="mySlides" src="images/slider/mujer_cine.jpg" style="width:100%"-->
             <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
-              <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
-              <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
-              <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
-              <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
-              <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
+                <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
+                <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
+                  <%for(int i=0;i<listConference.size();i++){%>
+                  <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(<%=i%>)"></span>
+    
+            <%}%>
+                 </div>
             </div>
-          </div>
-        <!--div class="slide" >
-            <a href="Evento.jsp"><img class="mySlides" src="images/slider/taller.jpg" ></a>
-            <img class="mySlides" src="images/slider/cliche.jpg" >
-            <img class="mySlides" src="images/slider/cine.jpg" >
-            <img class='mySlides' src="images/slider/mujer_cine.jpg" >
-        </div-->
-        
     </body>
     <%@include file="footer.jsp"%>     
     <script>
