@@ -57,9 +57,40 @@ public class Login extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         
+         try (PrintWriter out = response.getWriter())
+            {
+            Conexion cn = new Conexion();
+            String userSt = request.getParameter("uname");
+            String pass = request.getParameter("psw");
+            Cifrado c = new Cifrado(pass);
+            String pass2=c.getWord();
+            User us;
+            us = cn.getUser(userSt, pass2);
+            if(userSt.equals(us.getEmail())&&pass2.equals(us.getPass()))
+                {
+                HttpSession sesion = request.getSession();      
+                sesion.setAttribute("usuario",us.getName());
+                sesion.setAttribute("tipo",us.getType());
+                response.sendRedirect("index.jsp");
+                }else{
+             out.println("<h1>El Usuario o la contraseña son incorrectos<h1>");
+            }
+            if(userSt.equals(us.getEmail())&&!pass2.equals(us.getPass()))
+                {
+                out.println("<h1>El Usuario o la contraseña son incorrectos<h1>");
+                //response.sendRedirect("index.jsp");
+                }
+            if(!userSt.equals(us.getEmail()))
+                {
+                out.println("<h1>El Usuario o la contraseña son incorrectos<h1>");
+                //response.sendRedirect("index.jsp");
+                }
+          
            
-        response.sendRedirect("index.jsp");
-        }
+     
+        
+            }
+    }
                
 
         
@@ -78,6 +109,7 @@ public class Login extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+        
     }
 
     /**
@@ -106,25 +138,9 @@ public class Login extends HttpServlet {
              else if(userSt.equals(us.getEmail())&&!pass.equals(us.getPass()))
                 out.println("<h1>El Usuario o la contraseña son incorrectos<h1>");
             }*/      
-       try (PrintWriter out = response.getWriter())
-            {
-            Conexion cn = new Conexion();
-            String userSt = request.getParameter("uname");
-            String pass = request.getParameter("psw");
-            User us;
-            us = cn.getUser(userSt, pass);
-            if(userSt.equals(us.getEmail())&&pass.equals(us.getPass()))
-                {
-                HttpSession sesion = request.getSession();      
-                sesion.setAttribute("usuario",us.getName());
-                response.sendRedirect("index.jsp");
-                }
-            if(userSt.equals(us.getEmail())&&!pass.equals(us.getPass()))
-                {
-                out.println("<h1>El Usuario o la contraseña son incorrectos<h1>");
-                }
-            }
-        processRequest(request, response);
+      
+       
+     processRequest(request, response);
     }
 
     /**
