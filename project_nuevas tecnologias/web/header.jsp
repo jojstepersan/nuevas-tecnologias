@@ -15,18 +15,27 @@
             <nav class="menu">
                 <span>
                     <ul>
-                        <li><a href="addConference.jsp">Add Conference</a></li>
-                        <li><a href="register_exp.jsp">Add Expositor</a></li>
+                         <%
+                        HttpSession sesion = request.getSession();
                         
+                        if(sesion.getAttribute("tipo") != null){
+                        int hola=(int) sesion.getAttribute("tipo");
+                        if(hola== 1){
+                        out.println("<li><a href=\"addConference.jsp\">Add Conference</a></li>");
+                        out.println("<li><a href=\"register_exp.jsp\">Add Expositor</a></li>");
+                        }
+                        }
+                        %> 
                         <li><a href="index.jsp">Inicio</a></li>
                         
                         <li><a href="listConference.jsp">Conferencias</a></li>
                         <li><a href="expositors.jsp">Expositores</a></li>
                         <%  
-                        HttpSession sesion = request.getSession();
+               
                         if(sesion.getAttribute("usuario") != null){
                           out.println("<li><a href=\"\">"+sesion.getAttribute("usuario")+"</a></li>");
-                          out.println("<li><a href=\"login.jsp\">Salir</a></li>");
+                          
+                          out.println("<li><a href=\"logout\">Salir</a></li>");
                         }else{
                          out.println("<li><a href=\"login.jsp\">Ingresar</a></li>");
                          out.println("<li><a href=\"register.jsp\">Registrate</a></li>");

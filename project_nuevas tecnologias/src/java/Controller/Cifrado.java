@@ -32,7 +32,7 @@ public class Cifrado {
     }
     
     public static void main(String[] args) {
-        String str="algunstringperrito";
+        String str="1234";
         Cifrado c=new Cifrado(str);
         System.out.println(c.getWord());
     }

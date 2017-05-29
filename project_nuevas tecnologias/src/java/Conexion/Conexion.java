@@ -34,7 +34,7 @@ public class Conexion {
         try
             {
             Class.forName("com.mysql.jdbc.Driver");
-            conexion=DriverManager.getConnection("jdbc:mysql://localhost/paginaKonrad?user=root&password=12345");
+            conexion=DriverManager.getConnection("jdbc:mysql://localhost/paginaKonrad?user=root&password=1234");
             statement=conexion.createStatement();
             }catch(ClassNotFoundException e)
                 {
@@ -57,7 +57,7 @@ public class Conexion {
             insert.setString(4, user.getDocument());
             insert.setLong(5, user.getTelephone());
             insert.setString(6, user.getPass());
-            insert.setInt(7, 1);
+            insert.setInt(7, user.getType());
             insert.executeUpdate();
             insert.close();
                 System.out.println("listo socio se registro el suario");
@@ -152,6 +152,7 @@ public class Conexion {
         while(read.next()){
             //cel=Long.parseLong(read.getString("email_user")); 
             Us= new User(read.getString(2),read.getString(3),read.getString(6),read.getString(1),read.getLong(5),read.getString(4));
+            Us.setType(read.getInt(7));
         } } catch (SQLException ex) {
             System.out.println("paila con la busqueda del man");}
         return Us;
