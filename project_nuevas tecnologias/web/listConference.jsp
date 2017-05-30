@@ -38,23 +38,23 @@
                                 <div class="imgcontainer">
                                     <img src="images/<%=con1.getImage()%>" alt="User" class="user">
                                 </div>
-                                <a href="Conference.jsp">Ver más</a>
+                                <a href="Conference.jsp?id=<%=con1.getId()%>">Ver más</a>
                             </form>
                         </td>
                         <% if(listConference.size()-1-i>0)
-                        {
-                        con2=listConference.get(i+1);
-                        %>
-                        <td>
-                           <form class="conf">
-                                <h3><%=con2.getTitle()%></h3>
-                                <div class="imgcontainer">
-                                    <img src="images/<%=con2.getImage()%>" alt="User" class="user">
-                                </div>
-                                <a href="Conference.jsp">Ver más</a>
-                            </form>
-                        </td>
-                        <%}%>
+                            {
+                            con2=listConference.get(i+1);
+                            %>
+                            <td>
+                               <form class="conf">
+                                    <h3><%=con2.getTitle()%></h3>
+                                    <div class="imgcontainer">
+                                        <img src="images/<%=con2.getImage()%>" alt="User" class="user">
+                                    </div>
+                                    <a href="Conference.jsp?id=<%=con2.getId()%>">Ver más</a>
+                                </form>
+                            </td>
+                            <%}%>
                     </tr>
                     <%}%>
                 </tbody>

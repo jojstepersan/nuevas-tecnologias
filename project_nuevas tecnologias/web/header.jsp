@@ -17,14 +17,15 @@
                     <ul>
                          <%
                         HttpSession sesion = request.getSession();
-                        
-                        if(sesion.getAttribute("tipo") != null){
-                        int hola=(int) sesion.getAttribute("tipo");
-                        if(hola== 1){
-                        out.println("<li><a href=\"addConference.jsp\">Add Conference</a></li>");
-                        out.println("<li><a href=\"register_exp.jsp\">Add Expositor</a></li>");
-                        }
-                        }
+                        if(sesion.getAttribute("tipo") != null)
+                            {
+                            Integer hola=(Integer)sesion.getAttribute("tipo");
+                            if(hola== 1)
+                                {
+                                out.println("<li><a href=\"addConference.jsp\">Add Conference</a></li>");
+                                out.println("<li><a href=\"register_exp.jsp\">Add Expositor</a></li>");
+                                }
+                            }
                         %> 
                         <li><a href="index.jsp">Inicio</a></li>
                         

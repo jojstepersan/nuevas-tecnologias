@@ -29,14 +29,14 @@
             %>
             <div class="container-expo">
                 <div class="image_expo">
-                <img src="./images/user_dark.png">
+                    <img src="./images/Expositor/<%=expositor.getImage()%>">
                 </div>
                 <div class="expositor">
                     <strong>Nombre :</strong> <p><%=expositor.getName()%> <%=expositor.getLastName()%></p><br>
-                    <strong>Descripción :</strong>  <p><%=expositor.getBibliography()%></p>
-                     <strong>Profeción :</strong>  <p><%=expositor.getProfesion()%></p>
-                    <strong><i>Investigación :  </i></strong><p><%=expositor.getInves()%></p>
-               </div>
+                    <strong>Profeción :</strong>  <p><%=expositor.getProfesion()%></p>
+                    <strong>Bibliografía :</strong>  <p><%=expositor.getBibliography()%></p>
+                       
+                </div>
             </div>
             <%}%>
             </table>

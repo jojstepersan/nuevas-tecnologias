@@ -12,15 +12,15 @@ public class Expositor {
     private String doc;
     private String bibliography;
     private String profesion;
-    private String inves;
+    private String image;
 
-    public Expositor(String name, String lastName, String doc, String descripton, String profesion, String inves) {
+    public Expositor(String name, String lastName, String doc, String descripton, String profesion, String image) {
         this.name = name;
         this.lastName = lastName;
         this.doc = doc;
         this.bibliography = descripton;
         this.profesion = profesion;
-        this.inves = inves;
+        this.image = image;
     }
 
     public String getName() {
@@ -63,11 +63,11 @@ public class Expositor {
         this.profesion = profesion;
     }
 
-    public String getInves() {
-        return inves;
+    public String getImage() {
+        return image;
     }
-    public void setInves(String inves) {
-        this.inves = inves;
+    public void setImage(String image) {
+        this.image = image;
     }
 //   
 }

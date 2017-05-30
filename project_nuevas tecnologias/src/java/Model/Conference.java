@@ -12,11 +12,30 @@ public class Conference
     {
     private int id;
     private String title;
-    private int availableShare;
-    private int share;
-    private Expositor lecture;
+    private int classroom;
+    private String fecha;
     private String docExpositer;
+    private ArrayList<String> paragraphs;
+    private String image;
+    private ArrayList<User> listUsers;
+    public String getFecha() {
+        return fecha;
+    }
+    
+    
 
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
+    }
+
+    public ArrayList<String> getParagraphs() {
+        return paragraphs;
+    }
+
+    public void setParagraphs(ArrayList<String> paragraphs) {
+        this.paragraphs = paragraphs;
+    }
+    
     public String getDocExpositer() {
         return docExpositer;
     }
@@ -24,14 +43,11 @@ public class Conference
     public void setDocExpositer(String docExpositer) {
         this.docExpositer = docExpositer;
     }
-    private String  introduction;
-    private String paragraphs;
-    private String image;
-    private ArrayList<User> listUsers;
-    
+  
     public Conference()
         {
         listUsers=new ArrayList<>();
+        paragraphs=new ArrayList<>();
         }
 
     public int getId() {
@@ -41,23 +57,7 @@ public class Conference
     public void setId(int id) {
         this.id = id;
     }
-
-    public Expositor getLecture() {
-        return lecture;
-    }
-
-    public void setLecture(Expositor lecture) {
-        this.lecture = lecture;
-    }
-
-    public String getIntroduction() {
-        return introduction;
-    }
-
-    public void setIntroduction(String introduction) {
-        this.introduction = introduction;
-    }
-
+    
     public String getImage() {
         return image;
     }
@@ -74,25 +74,19 @@ public class Conference
         this.title = title;
     }
 
-    public int getShare() {
-        return share;
+    public int getClassroom() {
+        return classroom;
     }
 
     public int getAvailableShare() {
-        return share-listUsers.size();
+        return listUsers.size();
     }
 
-    public void setShare(int share) {
-        this.share = share;
+    public void setClassroom(int share) {
+        this.classroom = share;
     }
 
-    public String getParagraphs() {
-        return paragraphs;
-    }
-
-    public void setParagraphs(String paragraphs) {
-        this.paragraphs = paragraphs;
-    }
+   
 
     public ArrayList<User> getListUsers() {
         return listUsers;

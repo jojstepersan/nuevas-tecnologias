@@ -34,11 +34,11 @@ public class Conexion {
         try
             {
             Class.forName("com.mysql.jdbc.Driver");
-            conexion=DriverManager.getConnection("jdbc:mysql://localhost/paginaKonrad?user=root&password=1234");
+            conexion=DriverManager.getConnection("jdbc:mysql://localhost/paginaKonrad?user=root&password=12345");
             statement=conexion.createStatement();
             }catch(ClassNotFoundException e)
                 {
-                    System.out.println("paila la conexion");
+                System.out.println("paila la conexion");
                 }
             catch(SQLException sql)
                 {
@@ -75,7 +75,7 @@ public class Conexion {
             insert.setString(3, exp.getLastName());
             insert.setString(4, exp.getProfesion());
             insert.setString(5, exp.getBibliography());
-            insert.setString(6, exp.getInves());
+            insert.setString(6, exp.getImage());
             insert.executeUpdate();
             insert.close();
             }catch(SQLException ex)
@@ -92,7 +92,7 @@ public class Conexion {
                 list.add(expositor);
                 }
             read.close();
-            System.out.println("listo los expo");
+            System.out.println("listo los expositores");
             }catch(SQLException ex)
                 {
                 System.out.println("no se pudo con la lista de los expositores");

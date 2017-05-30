@@ -17,9 +17,9 @@
         <%@include file="header.jsp"%>
         <section>
         <form action="regis_exp" method="POST" class="res">
-            <h2>Añadir expositor</h2>
+            <h2>Agregar expositor</h2>
             <div class="imgcontainer">
-                <img src="images/user.png" alt="User" class="user">
+                <img src="images/user_dark.png" alt="User" class="user">
             </div>
             <div class="container">
                 <label><strong>Nombres</strong></label>
@@ -30,13 +30,10 @@
                 <input type="text" placeholder="Ingrese documento" name="doc" required>
                 <label> <strong>Profeción</strong> </label>
                 <input type="text" placeholder="Ingrese profeción" name="profes" required>
-               <label> <strong>descripcion</strong> </label>
-                <textarea rows="4" cols="50" name="des" data-toggle="tooltip" data-placement="data-toggle">
+                <label> <strong>Bibliografía</strong> </label>
+                <textarea rows="10" cols="80" name="des" data-toggle="tooltip" data-placement="data-toggle">
                 </textarea>
-                <label> <strong>investigaciones</strong> </label>
-                <textarea rows="4" cols="50" name="inves" data-toggle="tooltip" data-placement="data-toggle">
-                </textarea>
-                <button type="submit">Añadir</button>
+                <button type="submit">Siguiente</button>
             </div>
         </form>
         </section>

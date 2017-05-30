@@ -21,13 +21,12 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(name = "regis_exp", urlPatterns = {"/regis_exp"})
 public class regis_exp extends HttpServlet {
-    private Conexion connection=new Conexion();
+   public static Expositor expositor;
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-           
-                 response.sendRedirect("register_exp.jsp");
+                 response.sendRedirect("addImageExpositor.jsp");
         }
     }
 
@@ -61,11 +60,8 @@ public class regis_exp extends HttpServlet {
 		String us = request.getParameter("lastname");
                 String doc = request.getParameter("doc");
                 String des = request.getParameter("des");
-                String inves = request.getParameter("inves");
                 String prof =request.getParameter("profes");
-                System.out.println(us.length()+" "+doc+" "+des.length()+" "+inves.length()+" "+prof);
-                Expositor exp= new Expositor(nom,us,doc,des,prof,inves);
-                connection.setExpositor(exp);
+                expositor= new Expositor(nom,us,doc,des,prof,"");
         processRequest(request, response);
     }
 

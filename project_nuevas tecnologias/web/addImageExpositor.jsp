@@ -1,6 +1,6 @@
 <%-- 
-    Document   : addImage
-    Created on : Apr 9, 2017, 6:06:21 PM
+    Document   : addImageExpositor
+    Created on : May 30, 2017, 12:45:00 AM
     Author     : Stiven
 --%>
 
@@ -9,17 +9,17 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Imagen Expositor</title>
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
+        <%@include file="header.jsp"%>
         <section>
-            <form action="AddImage" method="post" enctype="MULTIPART/FORM-DATA">
+            <form action="AddImageExpositor" method="post" enctype="MULTIPART/FORM-DATA">
                 <label style="font-size:1.3em; "><strong>Agragar imagen</strong></label>
                 <input type="file" name="image">
                 <button type="submit"><Strong>Finalizar</strong></button>
             </form>
         </section>
     </body>
-    
 </html>

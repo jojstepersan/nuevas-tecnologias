@@ -41,8 +41,11 @@ share_available int
 create table conference(
 cod_conference int primary key auto_increment, 
 name_conference varchar(50), 
-introduction_conference varchar(300), 
-description_conference varchar(800),
+parrafo_1 varchar(600),
+parrafo_2 varchar(600),
+parrafo_3 varchar(600),
+parrafo_4 varchar(600),
+parrafo_5 varchar(600),
 share_conference int(11),
 image varchar(50),
 doc_expositor varchar(30),
@@ -52,32 +55,11 @@ doc_expositor varchar(30),
 create table session_conference(
 cod_user varchar(50),
 cod_conference int,
-cod_classroom int,
 date_conference datetime,
 foreign key (cod_user) references usuario(email_user),
-foreign key (cod_conference) references conference(cod_conference),
-foreign key (cod_classroom) references classroom(cod_classroom)
+foreign key (cod_conference) references conference(cod_conference)
 );
 
-/*tabla horario
+drop table conference
 
-create table schelude(
-cod_schelude int not null primary key,
-date_conference datetime
-);
-*/
-/*tabla salon donde se hara la conferencia
-*/
-/*
-create table day(
-cod_day int primary key,
-nom_day varchar(10)
-);
 
-insert into day values(1,'Lunes');
-insert into day values(2,'Martes');
-insert into day values(3,'Miercoles');
-insert into day values(4,'Jueves');
-insert into day values(5,'Viernes');
-insert into day values(6,'Sabado');
-insert into day values(7,'Domingo');*/

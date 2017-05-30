@@ -8,6 +8,7 @@ package Controller;
 import Model.Conference;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -67,23 +68,20 @@ public static Conference conference=new Conference();
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         conference=new Conference();
-        System.out.println("entre");
-        conference.setTitle(request.getParameter("title"));
         String expositor=request.getParameter("selectExpositor"); 
         String[] aux=expositor.split(":");
         String documento=aux[0];
+        ArrayList<String> parrafos=new ArrayList<>();
+        for(int i=1;i<=5;i++)
+           parrafos.add(request.getParameter("parrafo"+i));
+        conference.setTitle(request.getParameter("title"));
+        conference.setParagraphs(parrafos);
         conference.setDocExpositer(documento);
-        conference.setShare(Integer.valueOf(request.getParameter("number")));
-        conference.setIntroduction(request.getParameter("introduction"));
-        conference.setParagraphs(request.getParameter("description"));
+        conference.setClassroom(Integer.valueOf(request.getParameter("number")));
+        System.out.println(request.getParameter("date"));
         processRequest(request, response);
     }
 
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
     @Override
     public String getServletInfo() {
         return "Short description";
