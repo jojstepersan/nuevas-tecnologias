@@ -28,38 +28,43 @@ doc_expositor varchar(30) primary key,
 name_expositor varchar(50),
 last_name varchar(50),
 profecion varchar(50),
-description varchar(300),
-inves varchar(800)
+imagen varchar(100),
+bibliografia varchar(300)
 );
 
 create table classroom(
 cod_classroom int not null primary key,
-name_classroom varchar(11),
 share_available int
 );
 
 create table conference(
 cod_conference int primary key auto_increment, 
 name_conference varchar(50), 
+classroom int,
 parrafo_1 varchar(600),
 parrafo_2 varchar(600),
 parrafo_3 varchar(600),
 parrafo_4 varchar(600),
 parrafo_5 varchar(600),
-share_conference int(11),
 image varchar(50),
+fecha datetime,
 doc_expositor varchar(30),
+foreign key (classroom) references classroom(cod_classroom),
  foreign key (doc_expositor) references expositor(doc_expositor)
 );
 
 create table session_conference(
 cod_user varchar(50),
 cod_conference int,
-date_conference datetime,
 foreign key (cod_user) references usuario(email_user),
 foreign key (cod_conference) references conference(cod_conference)
 );
 
-drop table conference
+insert into classroom values(1,50);
+insert into classroom values(2,50);
+insert into classroom values(3,50);
+insert into classroom values(4,50);
+insert into classroom values(5,50);
 
+select * from expositor;
 
