@@ -34,6 +34,18 @@
                     <option name="expositor"><%=expositor.getDoc()%> : <%=expositor.getName()%> <%=expositor.getLastName()%></option>
                     <%}%>               
             </select>
+             <label><strong>Salon</strong></label>
+            <select name="selectClassroom">
+                <%
+                
+                ArrayList<Integer> classrooms=conexion.getClassroom();
+                for (int i = 0; i < classrooms.size(); i++) 
+                    {
+                    
+                %>
+                    <option name="classroom"><%=classrooms.get(i)%></option>
+                    <%}%>               
+            </select>
             <label><strong>Parrafo 1</strong></label>
             <textarea rows="10" cols="80" name="parrafo1" ></textarea>
             <label><strong>Parrafo 2</strong></label>
@@ -43,11 +55,9 @@
             <label><strong>Parrafo 4</strong></label>
             <textarea rows="10" cols="80" name="parrafo4"></textarea>
             <label><strong>Parrafo 5</strong></label>
-            <textarea rows="10" cols="80" name="parrafo15"></textarea>
-            <label><strong>Cupos</strong></label>
-            <input type="number" name="number">
+            <textarea rows="10" cols="80" name="parrafo5"></textarea>
             <label><Strong>Horario</Strong></label>
-            <input type="date" name="date">
+            <input type="datetime-local" name="date">
             <button type="submit"><a href="addImageConference.jsp"><strong>Continuar</strong></a></button>
         </form>
               

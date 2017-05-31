@@ -37,7 +37,7 @@ public static Conference conference=new Conference();
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            response.sendRedirect("addImage.jsp");
+            response.sendRedirect("addImageConference.jsp");
         }
     }
 
@@ -72,13 +72,19 @@ public static Conference conference=new Conference();
         String[] aux=expositor.split(":");
         String documento=aux[0];
         ArrayList<String> parrafos=new ArrayList<>();
+        System.out.println("parrafos servlet");
+        for(int i=1;i<=5;i++)
+            System.out.println(request.getParameter("parrafo"+i));
         for(int i=1;i<=5;i++)
            parrafos.add(request.getParameter("parrafo"+i));
         conference.setTitle(request.getParameter("title"));
         conference.setParagraphs(parrafos);
         conference.setDocExpositer(documento);
-        conference.setClassroom(Integer.valueOf(request.getParameter("number")));
+        System.out.println(documento+" expositor");
+        conference.setClassroom(Integer.valueOf(request.getParameter("selectClassroom")));
+        conference.setFecha(request.getParameter("date"));
         System.out.println(request.getParameter("date"));
+        System.out.println("listo");
         processRequest(request, response);
     }
 

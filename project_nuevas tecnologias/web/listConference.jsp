@@ -36,7 +36,7 @@
                             <form class="conf">
                                 <h3><%=con1.getTitle()%></h3>
                                 <div class="imgcontainer">
-                                    <img src="images/<%=con1.getImage()%>" alt="User" class="user">
+                                    <img src="images/Conferences/<%=con1.getImage()%>" alt="User" class="user">
                                 </div>
                                 <a href="Conference.jsp?id=<%=con1.getId()%>">Ver más</a>
                             </form>
@@ -49,7 +49,7 @@
                                <form class="conf">
                                     <h3><%=con2.getTitle()%></h3>
                                     <div class="imgcontainer">
-                                        <img src="images/<%=con2.getImage()%>" alt="User" class="user">
+                                        <img src="images/Conferences/<%=con2.getImage()%>" alt="User" class="user">
                                     </div>
                                     <a href="Conference.jsp?id=<%=con2.getId()%>">Ver más</a>
                                 </form>

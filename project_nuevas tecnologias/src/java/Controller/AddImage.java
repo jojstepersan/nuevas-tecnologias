@@ -45,7 +45,7 @@ public class AddImage extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            response.sendRedirect("Conference.jsp");
+            response.sendRedirect("listConference.jsp");
         }
         
     }
@@ -85,7 +85,7 @@ public class AddImage extends HttpServlet {
                 AddConference.conference.setImage(item.getName()); 
                 String os=System.getProperty("os.name");
                 if(os.equals("Windows 10"))
-                    urlImage="C:\\Users\\Stiven\\Documents\\NetBeansProjects\\nuevas-tecnologias\\project_nuevas tecnologias\\web\\images\\Conference\\"+item.getName();   
+                    urlImage="C:\\Users\\Stiven\\Documents\\NetBeansProjects\\nuevas-tecnologias\\project_nuevas tecnologias\\web\\images\\Conferences\\"+item.getName();   
                 //urlImage="./NetBeansProjects/nuevas-tecnologias/project_nuevas tecnologias/web/images/"+item.getName();
                 else
                     urlImage="";

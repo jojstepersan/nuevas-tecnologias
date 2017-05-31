@@ -24,7 +24,7 @@
           <h1>Conferencias k</h1>
          <div class="w3-content w3-display-container" >
              <%for(int i=0;i<listConference.size();i++){%>
-             <img class="mySlides" src="images/<%=listConference.get(i).getImage()%>" style="width:100%;height:500px; ">
+             <img class="mySlides" src="images/Conferences/<%=listConference.get(i).getImage()%>" style="width:100%;height:500px; ">
             <%}%>
             <!--img class="mySlides" src="images/slider/cine.jpg" style="width:100%">
             <img class="mySlides" src="images/slider/mujer_cine.jpg" style="width:100%"-->

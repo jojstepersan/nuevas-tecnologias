@@ -15,13 +15,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
-/**
- *
- * @author Stiven
- */
 public class Conexion {
     
     private PreparedStatement insert;
@@ -100,6 +94,23 @@ public class Conexion {
         return list;
         }
     
+     public ArrayList<Integer> getClassroom()
+        {
+        ArrayList<Integer> classroom=new ArrayList<>();
+        try{
+            read=statement.executeQuery("select cod_classroom from classroom");
+            while(read.next())
+                {
+                classroom.add(read.getInt(1));
+                }
+            read.close();
+            }catch(SQLException ex)
+                {
+                System.out.println("no se pudo con la lista de los expositores");
+                }
+        return classroom;
+        }
+    
     public ArrayList<Conference> getConference()
         {
         ArrayList<Conference> list=new ArrayList<>();
@@ -110,10 +121,17 @@ public class Conexion {
                 Conference conference=new Conference(); 
                 conference.setId(read.getInt(1));
                 conference.setTitle(read.getString(2));
-                conference.setIntroduction(read.getString(3));
-                conference.setParagraphs(read.getString(4));
-                conference.setId(read.getInt(5));
-                conference.setImage(read.getString(6));
+                ArrayList<String> parrafos=new ArrayList<>();
+                conference.setClassroom(read.getInt(3));
+                parrafos.add(read.getString(4));
+                parrafos.add(read.getString(5));
+                parrafos.add(read.getString(6));
+                parrafos.add(read.getString(7));
+                parrafos.add(read.getString(8));
+                conference.setParagraphs(parrafos);
+                conference.setImage(read.getString(9));
+                conference.setFecha(read.getString(10));
+                conference.setDocExpositer(read.getString(11));
                 list.add(conference);
                 }
             read.close();
@@ -128,19 +146,24 @@ public class Conexion {
         {
         try
             {
-            insert=conexion.prepareStatement("insert into conference(name_conference,introduction_conference,description_conference,share_conference,image,doc_expositor) values(?,?,?,?,?,?)");
+            insert=conexion.prepareStatement("insert into conference(name_conference,classroom,parrafo_1,parrafo_2,parrafo_3,parrafo_4,parrafo_5,image,fecha,doc_expositor) values(?,?,?,?,?,?,?,?,?,?)");
             insert.setString(1, conference.getTitle());
-            insert.setString(2, conference.getIntroduction());
-            insert.setString(3, conference.getParagraphs());
-            insert.setInt(4, conference.getShare());
-            insert.setString(5, conference.getImage());
-            insert.setString(6, conference.getDocExpositer());
+            insert.setInt(2, conference.getClassroom());
+            ArrayList<String> parrafos=conference.getParagraphs();
+            insert.setString(3, parrafos.get(0));
+            insert.setString(4, parrafos.get(1));
+            insert.setString(5, parrafos.get(2));
+            insert.setString(6, parrafos.get(3));
+            insert.setString(7, parrafos.get(4));
+            insert.setString(8, conference.getImage());
+            insert.setString(9, conference.getFecha());
+            insert.setString(10, conference.getDocExpositer());
             insert.executeUpdate();
             insert.close();
-            System.out.println("listo el insert fe la expo");
+            System.out.println("listo el insert de la expo");
             }catch(SQLException ex)
                 {
-                    System.out.println("paila con la inseercion de la conferencia");
+                System.out.println("paila con la insercion de la conferencia");
                 }
         }
     
@@ -150,18 +173,41 @@ public class Conexion {
             String sql="Select * FROM usuario WHERE email_user='"+email+"' && password_user='"+pass+"'";
             read=statement.executeQuery(/*"Select * from user where email_user=? && password_user=?"*/sql);
         while(read.next()){
-            //cel=Long.parseLong(read.getString("email_user")); 
             Us= new User(read.getString(2),read.getString(3),read.getString(6),read.getString(1),read.getLong(5),read.getString(4));
             Us.setType(read.getInt(7));
-        } } catch (SQLException ex) {
+        }
+            read.close();
+        } catch (SQLException ex) {
             System.out.println("paila con la busqueda del man");}
         return Us;
     }
     
+    public Conference getConference(int id)
+        {
+        Conference conference=new Conference();
+        try {
+            String sql="Select * FROM conference WHERE cod_conference="+id;
+            read=statement.executeQuery(sql);
+            while(read.next())
+                {
+                conference.setId(read.getInt(1));
+                conference.setTitle(read.getString(2));
+                conference.setClassroom(read.getInt(3));
+                ArrayList<String> parrafos=new ArrayList<>();
+                for (int i = 4; i <= 8; i++)
+                    parrafos.add(read.getString(i));    
+                conference.setParagraphs(parrafos);
+                conference.setImage(read.getString(9));
+                conference.setFecha(read.getString(10));
+                conference.setDocExpositer(read.getString(11));
+                }
+            read.close();
+        } catch (SQLException ex) {
+            System.out.println("paila con la busqueda del man");}
+        return conference;
+        }
     public static void main(String[] args) {
         
-        Conexion c=new Conexion();
-        User s=c.getUser("alian@turin", "12345");
-        System.out.println(s.getName()+" "+s.getLastName());
+        System.out.println("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus adipiscing commodo aliquet. Fusce bibendum orci magna, a ".length());
     }
 }

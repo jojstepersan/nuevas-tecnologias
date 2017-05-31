@@ -15,7 +15,7 @@
     <body>
          <%@include file="header.jsp"%>
         <section>
-            <form action="AddImageExpositor" method="post" enctype="MULTIPART/FORM-DATA">
+            <form action="AddImage" method="post" enctype="MULTIPART/FORM-DATA">
                 <label style="font-size:1.3em; "><strong>Agragar imagen</strong></label>
                 <input type="file" name="image">
                 <button type="submit"><Strong>Finalizar</strong></button>

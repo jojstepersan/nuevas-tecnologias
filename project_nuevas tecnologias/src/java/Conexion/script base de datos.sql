@@ -6,8 +6,7 @@ CREATE TABLE type_user (
    cod_type int(11) NOT NULL,
    non_type varchar(20) DEFAULT NULL,
    PRIMARY KEY (cod_type)
- ) ENGINE=InnoDB DEFAULT CHARSET=utf8
-;
+ ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE usuario(
    email_user varchar(50) NOT NULL,
@@ -50,7 +49,7 @@ image varchar(50),
 fecha datetime,
 doc_expositor varchar(30),
 foreign key (classroom) references classroom(cod_classroom),
- foreign key (doc_expositor) references expositor(doc_expositor)
+foreign key (doc_expositor) references expositor(doc_expositor)
 );
 
 create table session_conference(
@@ -65,6 +64,4 @@ insert into classroom values(2,50);
 insert into classroom values(3,50);
 insert into classroom values(4,50);
 insert into classroom values(5,50);
-
-select * from expositor;
 

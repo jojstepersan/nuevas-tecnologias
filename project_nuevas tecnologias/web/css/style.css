@@ -23,7 +23,7 @@ h2
     text-align: Center;
     
 }
-input[type=text], input[type=password],[type=number],input[type=date],input[type=email] ,[type=tel],textarea,select,[type=file]{
+input[type=text],input[type=datetime-local], input[type=password],[type=number],input[type=date],input[type=email] ,[type=tel],textarea,select,[type=file]{
     width: 94%;
     padding: 12px 20px;
     margin: 8px ;
