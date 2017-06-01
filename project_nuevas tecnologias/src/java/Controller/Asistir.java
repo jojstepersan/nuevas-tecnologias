@@ -5,24 +5,24 @@
  */
 package Controller;
 
-import Model.Conference;
+import Conexion.Conexion;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author Stiven
  */
+@WebServlet(name = "Asistir", urlPatterns = {"/Asistir"})
+public class Asistir extends HttpServlet {
 
-@WebServlet(name = "AddConference", urlPatterns = {"/AddConference"})
-public class AddConference extends HttpServlet {
-public static Conference conference=new Conference();
+    private Conexion conexion=new Conexion();
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -37,7 +37,7 @@ public static Conference conference=new Conference();
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            response.sendRedirect("addImageConference.jsp");
+        response.sendRedirect("index.jsp");
         }
     }
 
@@ -64,46 +64,33 @@ public static Conference conference=new Conference();
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+    
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        conference=new Conference();
-        String expositor=request.getParameter("selectExpositor"); 
-        String[] aux=expositor.split(":");
-        String documento=aux[0];
-        ArrayList<String> parrafos=new ArrayList<>();
-        System.out.println("parrafos servlet");
-        for(int i=1;i<=5;i++){
-           parrafos.add(editParrafo(request.getParameter("parrafo"+i))); 
-            System.out.println(parrafos.get(i-1));
-        }
-        conference.setTitle(request.getParameter("title"));
-        conference.setParagraphs(parrafos);
-        conference.setDocExpositer(documento);
-        System.out.println(documento+" expositor");
-        conference.setClassroom(Integer.valueOf(request.getParameter("selectClassroom")));
-        conference.setFecha(request.getParameter("date"));
-        System.out.println(request.getParameter("date"));
-        System.out.println("listo");
-        processRequest(request, response);
-    }
-    
-    public static String editParrafo(String parrafo)
-        {
-        String aux="";
-        while(parrafo.length()>122)
-            {
-            aux+=parrafo.substring(0, 122)+"\n";
-            parrafo=parrafo.substring(122);
+            HttpSession x=request.getSession();
+            System.out.println(x);
+            String aux=request.getParameter("asistir");
+            System.out.println(request.getSession().getAttribute("email"));
+            if(x.getAttribute("email")!=null)
+                {
+                if(aux.equals("Asistir"))
+                    conexion.addSession((String)x.getAttribute("email"), (int) x.getAttribute("conference"));
+                else
+                    conexion.deleteSession((String) x.getAttribute("email"), (int) x.getAttribute("conference"));
+                processRequest(request, response);
+                }
+            else    
+                {
+                response.sendRedirect("login.jsp");
+                }
             }
-        aux+=parrafo;
-        return aux;
-        }
-    public static void main(String[] args) {
-        String str="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus adipiscing commodo aliquet. Fusce bibendum orci magna, a pellentesque augue posuere sed. Ut bibendum magna tincidunt velit fermentum, eu laoreet arcu consectetur. Nullam nec enim sed justo fermentum sagittis. Nam varius dapibus risus, quis consectetur mauris. Praesent ut iaculis turpis. Phasellus congue tristique ligula et consequat.";
-        System.out.println(str.length());
-        System.out.println(editParrafo(str));
-    }       
+
+    /**
+     * Returns a short description of the servlet.
+     *
+     * @return a String containing servlet description
+     */
     @Override
     public String getServletInfo() {
         return "Short description";

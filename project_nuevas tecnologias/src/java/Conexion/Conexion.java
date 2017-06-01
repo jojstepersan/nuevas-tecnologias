@@ -15,6 +15,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Conexion {
     
@@ -206,8 +208,85 @@ public class Conexion {
             System.out.println("paila con la busqueda del man");}
         return conference;
         }
+    
+    public int numeroCupos(int id)
+        {
+        int cupos=0;
+        try {
+            String sql="select classroom.share_available from conference, classroom where conference.classroom=classroom.cod_classroom and conference.cod_conference="+id;
+            read=statement.executeQuery(sql);
+            while(read.next())                  
+                cupos=read.getInt(1);
+            read.close();
+        } catch (SQLException ex) {
+            System.out.println("paila los cupos");}
+        return cupos;
+        }
+    
+    public void addSession(String email,int conference)
+        {
+        try
+            {
+            insert=conexion.prepareStatement("insert into session_conference values(?,?)");
+            insert.setString(1, email);
+            insert.setInt(2, conference);
+            insert.executeUpdate();
+            insert.close();
+            }catch(SQLException ex)
+            {  System.out.println("paila perro con el insert  de la sesion"); }
+        }
+    public boolean isConference(String user,int conference)
+        {
+        boolean is=false;
+        try {
+            String sql="select  * From session_conference\n" +
+            "where session_conference.cod_user='"+user+"' and cod_conference="+conference;
+            read=statement.executeQuery(sql);
+            String us="";
+            int con=0;
+            while(read.next())
+                {
+                us=read.getString(1);
+                con=read.getInt(2);
+                }
+            read.close();
+            if(us.equals(user)&&con==conference)
+                is=true;
+        } catch (SQLException ex) {
+            System.out.println("paila si esta en la sesion");}
+        return is;
+        }
+    
+    public void deleteSession(String user,int conference)
+        {
+        try {
+            insert=conexion.prepareStatement("delete from session_conference where cod_user=? and cod_conference=?");
+            insert.setString(1, user);
+            insert.setInt(2, conference);
+            insert.executeUpdate();
+            insert.close();
+            } catch (SQLException ex) {
+                System.out.println("paila cancelas la session");
+                }
+        }
+    
+    public int cuposDisnibles(int conference)
+        {
+        int cupos=0;
+        try {
+            String sql="select count(cod_conference) from session_conference\n" +
+            "where cod_conference="+conference;
+            read=statement.executeQuery(sql);
+            while(read.next())                  
+                cupos=read.getInt(1);
+            read.close();
+        } catch (SQLException ex) {
+            System.out.println("paila los cupos");}
+        return cupos;
+        }
     public static void main(String[] args) {
-        
-        System.out.println("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus adipiscing commodo aliquet. Fusce bibendum orci magna, a ".length());
-    }
+       Conexion con=new Conexion();
+        con.deleteSession("stiven@gmail.com", 1);
+        }
+
 }

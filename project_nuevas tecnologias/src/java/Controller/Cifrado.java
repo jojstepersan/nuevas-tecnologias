@@ -32,8 +32,10 @@ public class Cifrado {
     }
     
     public static void main(String[] args) {
-      String os=System.getProperty("os.name");
-        System.out.println(os);
+ 
+    String str="hola soy estiven el mas papi";
+        System.out.println(str.subSequence(0, 3));
+        System.out.println(str.substring(3));
     }
     
     private  String solt()

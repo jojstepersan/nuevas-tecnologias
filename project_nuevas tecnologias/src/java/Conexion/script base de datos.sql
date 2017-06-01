@@ -40,11 +40,11 @@ create table conference(
 cod_conference int primary key auto_increment, 
 name_conference varchar(50), 
 classroom int,
-parrafo_1 varchar(600),
-parrafo_2 varchar(600),
-parrafo_3 varchar(600),
-parrafo_4 varchar(600),
-parrafo_5 varchar(600),
+parrafo_1 varchar(1000),
+parrafo_2 varchar(1000),
+parrafo_3 varchar(1000),
+parrafo_4 varchar(1000),
+parrafo_5 varchar(1000),
 image varchar(50),
 fecha datetime,
 doc_expositor varchar(30),
@@ -59,9 +59,23 @@ foreign key (cod_user) references usuario(email_user),
 foreign key (cod_conference) references conference(cod_conference)
 );
 
+select * from conference;
+select * from usuario;
+
 insert into classroom values(1,50);
 insert into classroom values(2,50);
 insert into classroom values(3,50);
 insert into classroom values(4,50);
 insert into classroom values(5,50);
 
+insert into session_conference values('',?);
+select * from session_conference;
+select count(cod_conference) from session_conference
+where cod_conference=2;
+
+select  * From session_conference
+
+truncate session_conference;
+where session_conference.cod_user='s@g.co';
+
+delete from session_conference where cod_user='s@g.com' and cod_conference=1;

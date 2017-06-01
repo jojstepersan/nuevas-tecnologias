@@ -71,6 +71,8 @@ public class Login extends HttpServlet {
                 HttpSession sesion = request.getSession();      
                 sesion.setAttribute("usuario",us.getName());
                 sesion.setAttribute("tipo",us.getType());
+                sesion.setAttribute("documento", us.getDocument());
+                sesion.setAttribute("email", us.getEmail());
                 response.sendRedirect("index.jsp");
                 }else{
              out.println("<h1>El Usuario o la contraseña son incorrectos<h1>");
