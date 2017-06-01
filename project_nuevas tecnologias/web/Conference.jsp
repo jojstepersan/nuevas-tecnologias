@@ -40,14 +40,22 @@
                    
                     <li>     
                         <form action="Asistir" method="post">
-                            <%  if(!con.isConference((String)x.getAttribute("email"), id))
+                            <%  
+                                if(cupos-con.cuposDisnibles(id)!=0)
                                     {
-                                    %>
-                                    <input type="submit" class="asistir" value="Asistir" name="asistir"> 
-                                <%  }
-                                else{%>
-                                    <input type="submit" class="asistir" value="Cancelar" name="asistir"> 
-                                    <%}%>    
+                                    if(!con.isConference((String)x.getAttribute("email"), id))
+                                        {    
+                                        %>
+                                        <input type="submit" class="asistir" value="Asistir" name="asistir"> 
+                                    <%  }
+                                    else{%>
+                                        <input type="submit" class="asistir" value="Cancelar" name="asistir"> 
+                                        <%}
+                                    }
+                                else    
+                                    {   %>
+                                    <li class="info">NO hay cupos</li>
+                                    <%}%>
                         </form>
                     </li>
                     <li class="info">Total cupos:</li>
