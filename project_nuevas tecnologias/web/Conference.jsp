@@ -66,18 +66,14 @@
             </span>    
         </nav>
         </div>
-                    
-        
-            <%
-                ArrayList<String> parrafos=conference.getParagraphs();
-                for(int i=0;i<parrafos.size();i++){
-                    
-                
-            %>
-            <p>
-                <%=parrafos.get(i)%>
-            </p>  
-            <%}%>
+        <%
+            ArrayList<String> parrafos=conference.getParagraphs();
+            for(int i=0;i<parrafos.size();i++)
+                {%>
+                <p>
+                    <%=parrafos.get(i)%>
+                </p>  
+                <%}%>
         
     </body>
     <%@include file="footer.jsp"%> 

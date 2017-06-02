@@ -23,7 +23,17 @@ public class User {
     public void setType(int type) {
         this.type = type;
     }
-
+    public User()
+        {
+         name="";
+        lastName="";
+        pass="";
+        email="";
+        telephone=0;
+        document="";
+        type=0;
+        }
+    
     public User(String name, String lastname, String pass, String email, long telephone,String document) {
         this.name = name;
         this.lastName = lastname;

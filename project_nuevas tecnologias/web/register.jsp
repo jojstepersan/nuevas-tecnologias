@@ -43,9 +43,8 @@
         <script>
             var password = document.getElementById("pass")
                     , confirm_password = document.getElementById("confirm_password");
-
             function validatePassword() {
-                if((password.value).length > 8){
+                if((password.value).length < 8){
                     password.setCustomValidity("Debe ser de maximo 8 caracteres");
                 }else{
                    password.setCustomValidity('');

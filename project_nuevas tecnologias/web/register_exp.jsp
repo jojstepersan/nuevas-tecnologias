@@ -6,6 +6,32 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<%
+response.setHeader("Content-Type", "text/html; charset=windows-1252");
+response.setHeader("Pragma", "no-cache");
+response.setHeader("Expires", "mon, 01 Jan 2017 00:00:01 GMT");
+response.setHeader("Cache-Control", "no-store");
+response.setHeader("Cache-Control", "must-revalidate");
+response.setHeader("Cache-Control", "no-cache");
+HttpSession actual = request.getSession(true);
+
+System.out.println(actual.getAttribute("tipo"));
+       
+     if (!actual.isNew()) {
+        response.sendRedirect("login.jsp");
+        return;
+    }
+    if (actual == null) 
+        {
+        response.sendRedirect("login.jsp");
+        } 
+    else if (actual.getAttribute("tipo").equals(2) ) 
+        {
+        response.sendRedirect("login.jsp");
+        } 
+     
+    
+%>
 <html>
     <head>
         <meta http-equiv="Content-Type"   content="text/html; charset=UTF-8">
