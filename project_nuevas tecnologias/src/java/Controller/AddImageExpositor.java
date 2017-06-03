@@ -45,7 +45,7 @@ import org.apache.commons.fileupload.servlet.ServletFileUpload;
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            response.sendRedirect("Conference.jsp");
+            response.sendRedirect("index.jsp");
         }
     }
 

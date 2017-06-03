@@ -20,7 +20,7 @@ HttpSession actual = request.getSession(true);
 
 System.out.println(actual.getAttribute("tipo"));
        
-     if (!actual.isNew()) {
+     if (actual.isNew()) {
         response.sendRedirect("login.jsp");
         return;
     }
