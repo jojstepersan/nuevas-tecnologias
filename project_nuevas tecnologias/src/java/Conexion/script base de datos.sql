@@ -59,11 +59,12 @@ foreign key (cod_user) references usuario(email_user),
 foreign key (cod_conference) references conference(cod_conference)
 );
 
-insert into type_uer values(1,'admin');
-insert into type_uer values(2,'normal');
+insert into type_user values(1,'admin');
+insert into type_user values(2,'normal');
 insert into classroom values(1,50);
 insert into classroom values(2,50);
 insert into classroom values(3,50);
 insert into classroom values(4,50);
 insert into classroom values(5,50);
 insert into usuario values('admin@gmail.com','admin',' ',0,0,'MOQSUMOQS',1);
+insert into expositor values();
