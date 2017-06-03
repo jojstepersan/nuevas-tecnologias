@@ -30,7 +30,7 @@ public class Conexion {
         try
             {
             Class.forName("com.mysql.jdbc.Driver");
-            conexion=DriverManager.getConnection("jdbc:mysql://localhost/paginaKonrad?user=root&password=12345");
+            conexion=DriverManager.getConnection("jdbc:mysql://localhost/paginakonrad?user=root&password=12345");
             statement=conexion.createStatement();
             }catch(ClassNotFoundException e)
                 {
@@ -77,6 +77,7 @@ public class Conexion {
             }catch(SQLException ex)
             {  System.out.println("paila perro con el insert expositor"); }
         }
+     
     public ArrayList<Expositor> getExpositor()
         {
         ArrayList<Expositor> list=new ArrayList<>();
@@ -235,6 +236,7 @@ public class Conexion {
             }catch(SQLException ex)
             {  System.out.println("paila perro con el insert  de la sesion"); }
         }
+    
     public boolean isConference(String user,int conference)
         {
         boolean is=false;
@@ -284,9 +286,27 @@ public class Conexion {
             System.out.println("paila los cupos");}
         return cupos;
         }
+    
+    public Expositor getExpositor(String id)
+        {
+         Expositor expositor=null;   
+        try{
+            read=statement.executeQuery("select * from expositor where doc_expositor="+id);
+            while(read.next())
+                {
+                expositor=new Expositor(read.getString(2), read.getString(3), read.getString(1),read.getString(5), read.getString(4), read.getString(6));
+                }
+            read.close();
+            System.out.println("listo los expositores");
+            }catch(SQLException ex)
+                {
+                System.out.println("no se pudo con la lista de los expositores");
+                }
+        return expositor;
+        }
     public static void main(String[] args) {
        Conexion con=new Conexion();
-        con.deleteSession("stiven@gmail.com", 1);
-        }
+       con.getExpositor("1018499056");
+    }
 
 }

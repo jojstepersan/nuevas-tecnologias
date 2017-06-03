@@ -6,7 +6,6 @@
 package Controller;
 
 import Model.*;
-import Conexion.Conexion;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -59,12 +58,23 @@ public class regis_exp extends HttpServlet {
          String nom = request.getParameter("name");
 		String us = request.getParameter("lastname");
                 String doc = request.getParameter("doc");
-                String des = request.getParameter("des");
+                String des = editParrafo(request.getParameter("des"));
                 String prof =request.getParameter("profes");
                 expositor= new Expositor(nom,us,doc,des,prof,"");
         processRequest(request, response);
     }
 
+    public static String editParrafo(String parrafo)
+        {
+        String aux="";
+        while(parrafo.length()>80)
+            {
+            aux+=parrafo.substring(0, 80)+"\n";
+            parrafo=parrafo.substring(80);
+            }
+        aux+=parrafo;
+        return aux;
+        }
     /**
      * Returns a short description of the servlet.
      *

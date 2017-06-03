@@ -93,7 +93,7 @@ import org.apache.commons.fileupload.servlet.ServletFileUpload;
                     urlImage="C:\\Users\\Stiven\\Documents\\NetBeansProjects\\nuevas-tecnologias\\project_nuevas tecnologias\\web\\images\\Expositor\\"+item.getName();   
                 //urlImage="./NetBeansProjects/nuevas-tecnologias/project_nuevas tecnologias/web/images/"+item.getName();
                 else
-                    urlImage="";
+                    urlImage="/home/stiven/NetBeansProjects/nuevas-tecnologias/project_nuevas tecnologias/web/images/Expositor/"+item.getName();
                 File file=new File(urlImage);
                 try {
                     item.write(file);

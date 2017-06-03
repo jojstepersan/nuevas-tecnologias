@@ -4,6 +4,7 @@
     Author     : Stiven
 --%>
 
+<%@page import="Model.Expositor"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="Model.Conference"%>
 <%@page import="Conexion.Conexion"%>
@@ -24,6 +25,7 @@
           Conference conference=con.getConference(id);
           HttpSession x=request.getSession();
           x.setAttribute("conference", id);
+          Expositor exp=con.getExpositor(conference.getDocExpositer());
         %>   
         
         <div class="titulo" >
@@ -66,7 +68,10 @@
             </span>    
         </nav>
         </div>
-        <%
+        <p>   
+        <strong><i>Expositor encargado : <%=exp.getName()%> <%=exp.getLastName()%></i><Strong>
+        </p>    
+                    <%
             ArrayList<String> parrafos=conference.getParagraphs();
             for(int i=0;i<parrafos.size();i++)
                 {%>

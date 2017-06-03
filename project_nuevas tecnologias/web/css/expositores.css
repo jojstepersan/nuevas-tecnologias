@@ -11,11 +11,12 @@ and open the template in the editor.
 {
     position: relative;
     width: 70%;
-    height: 400px;
+    height: 300px;
     left: 15%;
     border:2px solid black;
     margin-bottom: 30px;
 }
+
 .expositor
 {
 width: 70%;
@@ -27,25 +28,25 @@ float:right;
     width: 30%;
     height: 100%;
     float: left;
+    margin-top: 3%;
 }
-img
+.img_expo_img
 {
 width: 80%;
-height: 50%;
+height: 70%;
 left: 10%;
 margin-left: 10%;
     
 }
 .expositor p
 {
-    margin-left: 10%;
     margin-right: 10%;
     text-align: justify;
     font-size: 1.2em;
-    margin-bottom: 30px;
     font-style:  normal;
     width: 500px;
 }
+
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;

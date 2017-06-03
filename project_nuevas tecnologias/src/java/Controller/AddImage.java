@@ -88,7 +88,7 @@ public class AddImage extends HttpServlet {
                     urlImage="C:\\Users\\Stiven\\Documents\\NetBeansProjects\\nuevas-tecnologias\\project_nuevas tecnologias\\web\\images\\Conferences\\"+item.getName();   
                 //urlImage="./NetBeansProjects/nuevas-tecnologias/project_nuevas tecnologias/web/images/"+item.getName();
                 else
-                    urlImage="";
+                    urlImage="/home/stiven/NetBeansProjects/nuevas-tecnologias/project_nuevas tecnologias/web/images/Conferences/"+item.getName();
                 File file=new File(urlImage);
                 try {
                     item.write(file);

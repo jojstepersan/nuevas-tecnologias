@@ -28,7 +28,7 @@ name_expositor varchar(50),
 last_name varchar(50),
 profecion varchar(50),
 imagen varchar(100),
-bibliografia varchar(300)
+bibliografia varchar(1000)
 );
 
 create table classroom(
@@ -55,7 +55,6 @@ foreign key (doc_expositor) references expositor(doc_expositor)
 create table session_conference(
 cod_user varchar(50),
 cod_conference int,
-foreign key (cod_user) references usuario(email_user),
 foreign key (cod_conference) references conference(cod_conference)
 );
 
@@ -66,5 +65,15 @@ insert into classroom values(2,50);
 insert into classroom values(3,50);
 insert into classroom values(4,50);
 insert into classroom values(5,50);
+insert into classroom values(309,50);
+insert into classroom values(410,60);
+insert into classroom values(801,70);
+insert into classroom values(101,200);
+insert into classroom values(405,30);
+insert into classroom values(302,10);
+insert into classroom values(307,20);
+insert into classroom values(306,35);
+insert into classroom values(604,20);
+insert into classroom values(705,15);
 insert into usuario values('admin@gmail.com','admin',' ',0,0,'MOQSUMOQS',1);
-insert into expositor values();
+ 

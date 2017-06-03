@@ -29,10 +29,10 @@
             %>
             <div class="container-expo">
                 <div class="image_expo">
-                    <img src="./images/Expositor/<%=expositor.getImage()%>">
+                    <img src="./images/Expositor/<%=expositor.getImage()%>" class="img_expo_img">
                 </div>
                 <div class="expositor">
-                    <strong>Nombre :</strong> <p><%=expositor.getName()%> <%=expositor.getLastName()%></p><br>
+                    <strong>Nombre :</strong> <p><%=expositor.getName()%> <%=expositor.getLastName()%></p>
                     <strong>Profeción :</strong>  <p><%=expositor.getProfesion()%></p>
                     <strong>Bibliografía :</strong>  <p><%=expositor.getBibliography()%></p>
                        

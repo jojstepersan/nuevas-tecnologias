@@ -69,9 +69,7 @@ public class Asistir extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
             HttpSession x=request.getSession();
-            System.out.println(x);
             String aux=request.getParameter("asistir");
-            System.out.println(request.getSession().getAttribute("email"));
             if(x.getAttribute("email")!=null)
                 {
                 if(aux.equals("Asistir"))

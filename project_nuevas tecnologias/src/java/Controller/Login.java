@@ -27,8 +27,9 @@ public class Login extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException 
         {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter())
-            {
+        PrintWriter out = response.getWriter();
+                
+        try{
             Conexion cn = new Conexion();
             String userSt = request.getParameter("uname");
             String pass = request.getParameter("psw");
@@ -37,7 +38,6 @@ public class Login extends HttpServlet {
             String pass2=c.getWord();
             User us=new User();
             us = cn.getUser(userSt, pass2);
-            System.out.println(us.getEmail()+" este es el email");
             if(userSt.equals(us.getEmail())&&pass2.equals(us.getPass()))
                 {
                 HttpSession sesion = request.getSession();      
@@ -63,7 +63,14 @@ public class Login extends HttpServlet {
                 out.println("<h1>El Usuario o la contraseña son incorrectos<h1>");
                 //response.sendRedirect("index.jsp");
                 }
-            }
+            }catch(Exception es)
+                {
+                response.sendRedirect("login.jsp");
+                out.println("<h1>El Usuario o la contraseña son incorrectos<h1>");
+    
+                }
+                
+            
         }
     
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
