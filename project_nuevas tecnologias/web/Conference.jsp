@@ -14,7 +14,6 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Confenrencia</title>
-    
         <link rel="stylesheet" href="css/evento.css">
      </head>
     <body>
@@ -27,7 +26,6 @@
           x.setAttribute("conference", id);
           Expositor exp=con.getExpositor(conference.getDocExpositer());
         %>   
-        
         <div class="titulo" >
                <h1><%=conference.getTitle()%></h1>
                <hr>
@@ -38,8 +36,7 @@
         <div class="info-evento">
             <nav class="nav-bar">
             <span>
-                <ul>
-                   
+                <ul>      
                     <li>     
                         <form action="Asistir" method="post">
                             <%  

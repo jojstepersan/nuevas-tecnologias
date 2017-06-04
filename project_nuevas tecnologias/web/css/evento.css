@@ -81,7 +81,7 @@ p
 {
     padding: 1px;
     width: 16%;
-    color: black;
+    color: white;
     height:50%;
     text-decoration: none;
     display: block;
@@ -92,11 +92,14 @@ p
 
 }
 .info{
-    background: blueviolet;
+    background: black;
+    border: 2px solid white;
+    color:white;
     
 }
 .data{
-    background: purple
+    background: black;
+    border: 2px solid white;
 }
 .info:hover{
     background: black;
